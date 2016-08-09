@@ -9,7 +9,9 @@
 Pod::Spec.new do |s|
   s.name             = 'EVSlidingTableViewCell'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of EVSlidingTableViewCell.'
+  s.homepage         = 'https://github.com/epv44/EVTopTabBar'
+  s.author           = { 'Eric Vennaro' => 'epv9@case.edu' }
+  s.summary          = 'UITableViewCell implementing "swipe to reveal" a drawer view with customizable action buttons'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,23 +20,23 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Custom UITableViewCell that can be swiped either way to reveal a "drawer" with between 1 and 4 customizable action buttons.  These action buttons fade and grow into view as the drawer is swiped.  This cell works on all orientations and all devices.
                        DESC
 
-  s.homepage         = 'https://github.com/<GITHUB_USERNAME>/EVSlidingTableViewCell'
+  s.homepage         = 'https://github.com/epv44/EVSlidingTableViewCell'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Eric Vennaro' => 'evennaro@acumensolutions.com' }
-  s.source           = { :git => 'https://github.com/<GITHUB_USERNAME>/EVSlidingTableViewCell.git', :tag => s.version.to_s }
+  s.author           = { 'Eric Vennaro' => 'epv9@case.edu' }
+  s.source           = { :git => 'https://github.com/epv44/EVSlidingTableViewCell.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.3'
 
   s.source_files = 'EVSlidingTableViewCell/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'EVSlidingTableViewCell' => ['EVSlidingTableViewCell/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'EVSlidingTableViewCell' => ['EVSlidingTableViewCell/Assets/*.png']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
