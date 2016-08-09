@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'EVSlidingTableViewCell_Example' do
+  pod 'EVSlidingTableViewCell', :path => '../'
+
+  target 'EVSlidingTableViewCell_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
