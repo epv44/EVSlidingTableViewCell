@@ -1,0 +1,6 @@
+framework module Pods_EVSlidingTableViewCell_Tests {
+  umbrella header "Pods-EVSlidingTableViewCell_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

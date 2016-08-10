@@ -1,0 +1,16 @@
+PODS:
+  - EVSlidingTableViewCell (0.1.0)
+
+DEPENDENCIES:
+  - EVSlidingTableViewCell (from `../`)
+
+EXTERNAL SOURCES:
+  EVSlidingTableViewCell:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EVSlidingTableViewCell: acfef6d49150ba0b94272f05d9c6a4aff5bc1ef8
+
+PODFILE CHECKSUM: 0a008e159d4fdadcf9cad4bbf48bbcb17ee32a7b
+
+COCOAPODS: 1.0.1

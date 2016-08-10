@@ -1,0 +1,6 @@
+framework module EVSlidingTableViewCell {
+  umbrella header "EVSlidingTableViewCell-umbrella.h"
+
+  export *
+  module * { export * }
+}

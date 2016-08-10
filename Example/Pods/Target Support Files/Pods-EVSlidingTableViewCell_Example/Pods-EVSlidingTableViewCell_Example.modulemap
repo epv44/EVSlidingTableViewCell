@@ -1,0 +1,6 @@
+framework module Pods_EVSlidingTableViewCell_Example {
+  umbrella header "Pods-EVSlidingTableViewCell_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
