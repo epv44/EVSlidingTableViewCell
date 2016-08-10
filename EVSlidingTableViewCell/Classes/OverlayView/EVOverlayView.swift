@@ -8,17 +8,17 @@
 
 import UIKit
 
-class EVOverlayView: UIView, EVOverlay {
-    var viewParameters: OverlayDictionaryType?
+public class EVOverlayView: UIView, EVOverlay {
+    public var viewParameters: OverlayDictionaryType?
     
-    var parameters: OverlayDictionaryType? {
+    public var parameters: OverlayDictionaryType? {
         didSet {
             viewParameters = parameters
             setupUI()
         }
     }
     
-    func setupUI() {
+    public func setupUI() {
         
     }
 }

@@ -7,7 +7,7 @@
 
 ## About
 
-EVSlidingTableViewCell is a custom UITableViewCell that implements the "slide to reveal" functionality similar to Google Hangouts.  It supports between 1 and 4 configurable action buttons that are revealed as the user defined Overlay is slid away.
+EVSlidingTableViewCell is a custom UITableViewCell that implements the "slide to reveal" functionality similar to GChat.  It supports between 1 and 4 configurable action buttons that are revealed as the user defined Overlay is slid away.
 
 ## Usage
 
@@ -42,8 +42,6 @@ import EVSlidingTableViewCell
 ## Author
 
 Eric Vennaro, epv9@case.edu
-
-## License
 
 ## License
 
