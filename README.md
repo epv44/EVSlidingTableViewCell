@@ -7,7 +7,7 @@
 
 ## About
 
-EVSlidingTableViewCell is a custom UITableViewCell that implements the "slide to reveal" functionality similar to GChat.  It supports between 1 and 4 configurable action buttons that are revealed as the user defined Overlay is slid away.
+EVSlidingTableViewCell is a custom UITableViewCell that implements the "slide to reveal" functionality similar to GChat.  It supports between 1 and 4 configurable action buttons that are revealed as the user defined overlay is slid away.
 
 ## Usage
 
@@ -53,11 +53,11 @@ Struct that holds values for a ContactItem.  An array of DrawerViewOptions is co
     * **buttonImage** -> ```UIImage``` to be displayed on the ContactItem button
 
 ### SlidingTableViewControllerCell
-UITableViewCell that allows for the Overlay to slide and reveal the drawer.
+UITableViewCell that allows for the overlay to slide and reveal the drawer.
 * **Public Methods**
     * **setCellWithAttributes(overlayParameters overlayParameters: OverlayDictionaryType, drawerViewOptions: DrawerViewOptionsType, overlayView overlay: EVOverlayView)**
-    * Places the ```overlay``` over cell, establishes the drawer view icons as defined by ```drawerViewOptions```, and passes the ```overlayParameters``` to the user defined overlay view.  This action kicks off the UI setup for the overlay view by calling ```setuUI()```.
-    * **resetOverlay()** resets the overlay view to the center position.
+    * Places the ```overlay``` over drawer cell, establishes the drawer view icons as defined by ```drawerViewOptions```, and passes the ```overlayParameters``` to the user defined overlay  This action kicks off the UI setup for the overlay view by calling ```setuUI()```.
+    * **resetOverlay()** resets the overlay to the center position.
 
 
 ### SlidingTableViewDelegate
@@ -74,10 +74,10 @@ UIView that conforms to the EVOverlayProtocol.  When you create your overlay ext
 * **Parameters**
     * **viewParameters** -> ```OverlayDictionaryType``` contains all the user defined properties from the overlayParameters in the ```cell.setCellWithAttributes(...)``` method call 
 * **Methods**
-    * **setupUI()** -> Override this method to set up a custom layout for your overlay view, see OverlayView in sample project for an example implementation
+    * **setupUI()** -> Override this method to set up a custom layout for your overlay, see ```OverlayView``` in sample project for an example implementation
 
 ### Extensions
-* **UITableView** -> Adds stored property used to check if overlay view is present or hidden
+* **UITableView** -> Adds stored property used to check if the overlay is present or hidden
 *  **UIView** -> Adds method ```.loadFromNib(bundle)``` which is used in the example project and loads a file from a nib see [stackoverflow answer][stackoverflow]
 
 ### Typealiases
