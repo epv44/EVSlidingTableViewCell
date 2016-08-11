@@ -9,8 +9,7 @@
 import UIKit
 
 public typealias OverlayDictionaryType = [String:Any?]
-//Needs to change to DrawerViewOptionsType
-public typealias ContactsArrayType = [DrawerViewOption]
+public typealias DrawerViewOptionsType = [DrawerViewOption]
 public typealias DrawerViewClosureType = ((String) -> Bool)
 
 public class SlidingTableViewControllerCell: UITableViewCell {
@@ -20,12 +19,12 @@ public class SlidingTableViewControllerCell: UITableViewCell {
     private var drawerViewGestureRecognizer = UIPanGestureRecognizer()
     private var drawerBoxes: [ContactItem] = []
     private var originalCenter = CGPoint()
-    private var contactMethods: ContactsArrayType?
+    private var drawerViewOptions: DrawerViewOptionsType?
     private var overlayView: EVOverlayView!
     private var growthRate: CGFloat = 0.01
     
-    public func setCellWithAttributes(overlayParameters overlayParameters: OverlayDictionaryType, contactMethods: ContactsArrayType, overlayView overlay: EVOverlayView){
-        self.contactMethods = contactMethods
+    public func setCellWithAttributes(overlayParameters overlayParameters: OverlayDictionaryType, drawerViewOptions: DrawerViewOptionsType, overlayView overlay: EVOverlayView){
+        self.drawerViewOptions = drawerViewOptions
         if overlayView == nil {
             overlayView = overlay
             overlayView.frame = CGRectMake(0, 0, frame.size.width, frame.size.height)
@@ -36,7 +35,12 @@ public class SlidingTableViewControllerCell: UITableViewCell {
             overlayView.frame = CGRectMake(0, 0, frame.size.width, frame.size.height)
         }
         setupDrawerViewUI()
+        setGrowthRate()
         overlayView.parameters = overlayParameters
+    }
+    
+    public func resetOverlay(){
+        overlayView.center = originalCenter
     }
     
     //MARK: Gesture Handlers
@@ -123,21 +127,26 @@ public class SlidingTableViewControllerCell: UITableViewCell {
     
     //MARK: Private Methods
     private func setupDrawerViewUI(){
-        //this could be expensive...
         containerView.subviews.forEach({ $0.removeFromSuperview() })
         drawerBoxes.removeAll()
-        if contactMethods != nil {
-            for contactMethod in contactMethods! {
+        if drawerViewOptions != nil && drawerViewOptions.count > 5 {
+            for option in drawerViewOptions! {
                 let contactView = ContactItem.loadFromNib(NSBundle(forClass: SlidingTableViewControllerCell.classForCoder()))
-                //load a UIImage which the user would input.  Can provide in sample project..
-                contactView.buttonImage = UIImage(imageLiteral: contactMethod.iconStringLiteral)
-                contactView.labelText = contactMethod.textForLabel
-                contactView.buttonClosure = contactMethod.closure
-                contactView.buttonActionText = contactMethod.valueForButtonAction
+                if let image = option.buttonImage {
+                    contactView.buttonImage = image
+                } else {
+                    contactView.buttonImage = UIImage()
+                }
+                if let text = option.textForLabel {
+                    contactView.labelText = text
+                } else {
+                    contactView.labelText = ""
+                }
+                contactView.buttonClosure = option.closure
+                contactView.buttonActionText = option.valueForButtonAction
                 containerView.addArrangedSubview(contactView)
                 drawerBoxes.append(contactView)
             }
-            setGrowthRate()
         }
     }
     
@@ -190,22 +199,22 @@ private extension UIView {
     
     func withdrawOverlay(translation translation: CGFloat, width: CGFloat, growthRate: CGFloat) {
         if isGoingLeft(translation){
-            if case ((self.leftPosition) - ScalingConstants.buffer) ... self.rightPosition = (translation + width){
-                let growthFactor = calculateGrowthFactorFor(translation: translation, boundsPosition: (width - (self.rightPosition + ScalingConstants.offset)), growthRate: growthRate)
-                if growthFactor < ScalingConstants.growthFactorLimit{
+            if case ((self.leftPosition) - EVConstants.ScalingConstants.buffer) ... self.rightPosition = (translation + width){
+                let growthFactor = calculateGrowthFactorFor(translation: translation, boundsPosition: (width - (self.rightPosition + EVConstants.ScalingConstants.offset)), growthRate: growthRate)
+                if growthFactor < EVConstants.ScalingConstants.growthFactorLimit{
                     self.fadeAndTransform(growthFactor)
                 }
-                if growthFactor > ScalingConstants.growthFactorLimit{
+                if growthFactor > EVConstants.ScalingConstants.growthFactorLimit{
                     self.fadeAndTransform()
                 }
             }
         } else {
-            if case self.leftPosition ... (self.rightPosition + ScalingConstants.buffer) = translation{
-                let growthFactor = calculateGrowthFactorFor(translation: translation, boundsPosition: (self.leftPosition - ScalingConstants.offset), growthRate: growthRate)
-                if growthFactor < ScalingConstants.growthFactorLimit {
+            if case self.leftPosition ... (self.rightPosition + EVConstants.ScalingConstants.buffer) = translation{
+                let growthFactor = calculateGrowthFactorFor(translation: translation, boundsPosition: (self.leftPosition - EVConstants.ScalingConstants.offset), growthRate: growthRate)
+                if growthFactor < EVConstants.ScalingConstants.growthFactorLimit {
                     self.fadeAndTransform(growthFactor)
                 }
-                if growthFactor > ScalingConstants.growthFactorLimit {
+                if growthFactor > EVConstants.ScalingConstants.growthFactorLimit {
                     self.fadeAndTransform()
                 }
             }
@@ -214,11 +223,11 @@ private extension UIView {
     
     func isPassed(translation translation: CGFloat){
         if isGoingLeft(translation){
-            if (leftPosition - ScalingConstants.offset) > (translation + UIScreen.mainScreen().bounds.width) {
+            if (leftPosition - EVConstants.ScalingConstants.offset) > (translation + UIScreen.mainScreen().bounds.width) {
                 self.fadeAndTransform()
             }
         } else {
-            if (rightPosition + ScalingConstants.offset) < translation {
+            if (rightPosition + EVConstants.ScalingConstants.offset) < translation {
                 self.fadeAndTransform()
             }
         }
@@ -226,18 +235,18 @@ private extension UIView {
     
     func replaceOverlay(translation translation: CGFloat, width: CGFloat, growthRate: CGFloat) {
         if isGoingLeft(translation) {
-            if case self.leftPosition ... (self.rightPosition + ScalingConstants.buffer) = (width + translation){
-                let growthFactor = 1 - calculateGrowthFactorFor(translation: translation, boundsPosition: (width - (self.rightPosition + ScalingConstants.offset)), growthRate: growthRate)
-                if growthFactor < ScalingConstants.growthFactorLimit {
+            if case self.leftPosition ... (self.rightPosition + EVConstants.ScalingConstants.buffer) = (width + translation){
+                let growthFactor = 1 - calculateGrowthFactorFor(translation: translation, boundsPosition: (width - (self.rightPosition + EVConstants.ScalingConstants.offset)), growthRate: growthRate)
+                if growthFactor < EVConstants.ScalingConstants.growthFactorLimit {
                     self.fadeAndTransform(growthFactor)
                 }
-                if growthFactor > ScalingConstants.growthFactorLimit {
+                if growthFactor > EVConstants.ScalingConstants.growthFactorLimit {
                     self.fadeAndTransform()
                 }
             }
         }else{
-            if case self.leftPosition ... (self.rightPosition + ScalingConstants.buffer) = translation{
-                let growthFactor = 1 - calculateGrowthFactorFor(translation: translation, boundsPosition: (self.leftPosition - ScalingConstants.offset), growthRate: growthRate)
+            if case self.leftPosition ... (self.rightPosition + EVConstants.ScalingConstants.buffer) = translation{
+                let growthFactor = 1 - calculateGrowthFactorFor(translation: translation, boundsPosition: (self.leftPosition - EVConstants.ScalingConstants.offset), growthRate: growthRate)
                 self.fadeAndTransform(growthFactor)
             }
         }
@@ -255,6 +264,21 @@ private extension UIView {
             return growth
         } else{
             return 0.0
+        }
+    }
+}
+
+public protocol SlidingTableViewCellDelegate: class{
+    func setDrawerViewOptionsForRow(object: Any) -> DrawerViewOptionsType
+}
+
+extension SlidingTableViewCellDelegate where Self: UIViewController {
+    public func didSelectRowIn(tableView: UITableView, atIndexPath indexPath: NSIndexPath) {
+        for cell in tableView.visibleCells as! [SlidingTableViewControllerCell] {
+            if cell.drawerDisplayed != nil && cell.drawerDisplayed == true {
+                cell.resetOverlay()
+                cell.drawerDisplayed = false
+            }
         }
     }
 }

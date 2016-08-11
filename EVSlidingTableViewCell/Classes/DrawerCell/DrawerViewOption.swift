@@ -9,9 +9,9 @@
 import Foundation
 
 public struct DrawerViewOption {
-    private var labelText: String = String()
-    private var associateContactValue: String = String()
-    private var iconLiteral: String = String()
+    private var labelText: String?
+    private var associateContactValue: String?
+    private var icon: UIImage?
     private var actionClosure: DrawerViewClosureType!
     
     public init(){
@@ -36,7 +36,7 @@ public struct DrawerViewOption {
         }
     }
     
-    public var textForLabel: String {
+    public var textForLabel: String? {
         get{
             return labelText
         }
@@ -45,13 +45,12 @@ public struct DrawerViewOption {
         }
     }
     
-    //this should change to be a UIImage
-    public var iconStringLiteral: String {
+    public var buttonImage: UIImage? {
         get{
-            return iconLiteral
+            return icon
         }
         set(value){
-            self.iconLiteral = value
+            self.icon = value
         }
     }
 }

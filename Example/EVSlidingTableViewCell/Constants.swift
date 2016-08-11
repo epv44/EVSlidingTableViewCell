@@ -9,11 +9,11 @@ import UIKit
 import EVSlidingTableViewCell
 
 struct Constants {
-    static let data = [User(name: "tupac", email: "2pac@example.com", homePhone: "216-330-3433", workPhone: "216-330-2323"),
+    static let data = [User(name: "tupac", email: "2pac@example.com", homePhone: "415-330-3433", workPhone: "415-330-2323"),
                        User(name: "richard", email: "mgk@example.com", homePhone: "216-000-0000", workPhone: "216-000-0000"),
-                       User(name: "gerald", email: "g-eazy@example.com", homePhone: "216-111-1234", workPhone: "216-550-4345"),
+                       User(name: "gerald", email: "g-eazy@example.com", homePhone: "510-111-1234", workPhone: "510-550-4345"),
                        User(name: "marshall", email: "eminem@example.com", homePhone: "313-233-3444"),
-                       User(name: "marshall", email: "eminem@example.com", workPhone: "313-233-3444"),
+                       User(name: "scott", email: "kidcuddie@example.com", workPhone: "216-233-3444"),
                        User(name: "frank", email: "biggie@example.com"),
                        User(name: "eric")]
 }

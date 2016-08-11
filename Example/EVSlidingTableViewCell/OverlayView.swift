@@ -21,7 +21,7 @@ class OverlayView: EVOverlayView {
     }
     
     override func setupUI(){
-        titleLabel.text = "Testing"
+        titleLabel.text = viewParameters!["name"] as? String
         alpha = 0.5
     }
 }

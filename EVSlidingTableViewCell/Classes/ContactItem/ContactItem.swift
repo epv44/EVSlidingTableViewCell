@@ -51,6 +51,8 @@ class ContactItem: UIView {
     }
     
     @IBAction func invokeContactClosure(sender: AnyObject) {
-        closure!(actionText!)
+        guard closure!(actionText!) else {
+            return
+        }
     }
 }
