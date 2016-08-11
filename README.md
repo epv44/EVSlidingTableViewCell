@@ -45,12 +45,12 @@ Struct that contains constants used in the project.
 Internal UIView that represents one of the drawer view icons which contains a user defined closure that is executed on buttonClick.  Every ContactItem gets its information from a DrawerViewOption.
 
 ### DrawerViewOption
-Struct that holds values for a ContactItem.  An array of DrawerViewOptions is constructs based off of the number of ContactItem's one wishes to display in the DrawerView (must be between 1 and 4) and then used to populate the ContactItem UIView.
+Struct that holds values for a ContactItem.  An array of DrawerViewOptions is constructed based off of the number of ContactItem's one wishes to display in the DrawerView (must be between 1 and 4).
 * **Parameters**
-    * **closure** -> closure of the type ```DrawerViewClosure``` this is executed on ContactItem's ibAction
-    * **valueForButtonAction** -> String that is taken as input by the closure
-    * **textForLabel** -> String that is the text for label displayed by the ContactItem
-    * **buttonImage** -> UIImage to be displayed on the ContactItem button
+    * **closure** -> Closure of the type ```DrawerViewClosure``` this is executed on ContactItems IBAction
+    * **valueForButtonAction** -> ```String``` that is taken as input by the closure
+    * **textForLabel** -> ```String``` that is the text for label displayed by the ContactItem
+    * **buttonImage** -> ```UIImage``` to be displayed on the ContactItem button
 
 ### SlidingTableViewControllerCell
 UITableViewCell that allows for the Overlay to slide and reveal the drawer.
@@ -63,14 +63,14 @@ UITableViewCell that allows for the Overlay to slide and reveal the drawer.
 ### SlidingTableViewDelegate
 Public protocol serving as the delegate for the SlidingTableViewCell, a complete example implementation is included in the sample project.
 * **Methods**
-    * **setDrawerViewOptionsForRow(object: Any) -> DrawerViewOptionsType **
-        * Use this method to construct an array of DrawerViewOptions this array is then used to populate the ContactItem UIView
+    * **setDrawerViewOptionsForRow(object: Any) -> DrawerViewOptionsType**
+        * Use this method to construct an array of ```DrawerViewOptions``` this array is then used to populate the ContactItem UIView
     * **didSelectRowIn(tableView: UITableView, atIndexPath indexPath: NSIndexPath)**
         * Calls ```resetOverlay``` on open cells when a cell is selected
         * Has a default implementation that can be overridden
 
 ### EVOverlayView
-UIView that conforms to the EVOverlayProtocol.  When you create your overlay extend EVOverlay, ```UserOverlay: EVOverlayView```.
+UIView that conforms to the EVOverlayProtocol.  When you create your overlay extend EVOverlay, ```class YourOverlay: EVOverlayView`{}``.
 * **Parameters**
     * **viewParameters** -> ```OverlayDictionaryType``` contains all the user defined properties from the overlayParameters in the ```cell.setCellWithAttributes(...)``` method call 
 * **Methods**
@@ -78,31 +78,32 @@ UIView that conforms to the EVOverlayProtocol.  When you create your overlay ext
 
 ### Extensions
 * **UITableView** -> Adds stored property used to check if overlay view is present or hidden
-*  **UIView** -> adds method ```.loadFromNib(bundle)``` which is used in the example project and loads a file from a nib see [stackoverflow answer][stackoverflow]
+*  **UIView** -> Adds method ```.loadFromNib(bundle)``` which is used in the example project and loads a file from a nib see [stackoverflow answer][stackoverflow]
 
 ### Typealiases
 * **OverlayDictionaryType** -> ```[String:Any?]```
 * **DrawerViewOptionType** -> ```[DrawerViewOption]```
 * **DrawerViewClosureType** -> ```((String) -> Bool)```
+
 ## Getting Started
 
 ### 1. Create The Overlay View
-Create your custom Overlay View.  This is the view you want to swipe away to reveal the drawer options.  Make sure to override the ```setupUI``` method, because it is called by the DrawerView and allows for the easy setup of the UIAttributes in your cell.  The viewParameters dictionary is available from this method, place the parameters you want in this dictionary and access them to setup your view within the Overlay.
+Create your custom Overlay View.  This is the view you want to swipe away to reveal the drawer options.  Make sure to override the ```setupUI``` method, because it is called by the DrawerView and allows for the easy setup of the UIAttributes in your cell.  The ```viewParameters``` dictionary is available from this method, place the parameters you want in this dictionary and access them to setup your view within the Overlay.
 
 ````swift
 import EVSlidingTableViewCell
 class OverlayView: EVOverlayView {
-@IBOutlet private weak var titleLabel: UILabel!
-//override this method
-override func setupUI(){
-titleLabel.text = viewParameters["titleLabelText"]
-}
+    @IBOutlet private weak var titleLabel: UILabel!
+    //override this method
+    override func setupUI(){
+        titleLabel.text = viewParameters["titleLabelText"]
+    }
 }
 ````
 
 ### 2. Register Cell In View Controller
 
-After creating the overlay view register the cell to the UITableView.
+Register the custom cell to the UITableView, same as any other custom cell.
 
 ````swift
 tableView.registerNib(EVConstants.evTableViewCell, forCellReuseIdentifier: reuseIdentifier)
@@ -112,14 +113,13 @@ Extend the SlidingTableViewCellDelegate and implement the ```setDrawerViewOption
 
 ````swift
 extension ViewController: SlidingTableViewCellDelegate {
-//there is a more robust example inside the example project
-func setDrawerViewOptionsForRow(object: Any) -> DrawerViewOptionsType {
-var contactMethods = DrawerViewOptionsType()
-//set contactMethods values for the label, image, and closure...
-//e.i. contactMethods.closure = emailClosure()
-
-return contactMethods 
-}
+    //there is a more robust example inside the example project
+    func setDrawerViewOptionsForRow(object: Any) -> DrawerViewOptionsType {
+        var contactMethods = DrawerViewOptionsType()
+        //set contactMethods values for the label, image, and closure...
+        //e.i. contactMethods.closure = emailClosure()
+        return contactMethods 
+    }
 }
 ````
 
@@ -128,57 +128,57 @@ Make sure to correctly link to this cell inside of your UITableViewDelegate/Data
 ````swift
 //MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
-func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//calls delegate method to replace overlay you can overwrite this method inside of the SlidingTableViewCellDelegate
-didSelectRowIn(tableView, atIndexPath: indexPath)
-}
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //calls delegate method to replace overlay you can overwrite this method inside of the SlidingTableViewCellDelegate
+        didSelectRowIn(tableView, atIndexPath: indexPath)
+    }
 }
 
 //MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
-func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-let cell = contactsTableView.dequeueReusableCellWithIdentifier(self.reuseIdentifier) as! SlidingTableViewControllerCell
-let user = data[indexPath.row]
-//calls delegateMethod
-let contactMethods = setDrawerViewOptionsForRow(user)
-cell.setCellWithAttributes(overlayParameters: [:], drawerViewOptions: contactMethods, overlayView: OverlayView.loadFromNib(nil))
-cell.selectionStyle = .None;
-return cell
-}
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = contactsTableView.dequeueReusableCellWithIdentifier(self.reuseIdentifier) as! SlidingTableViewControllerCell
+        let user = data[indexPath.row]
+        //calls delegateMethod
+        let contactMethods = setDrawerViewOptionsForRow(user)
+        cell.setCellWithAttributes(overlayParameters: [:], drawerViewOptions: contactMethods, overlayView: OverlayView.loadFromNib(nil))
+        cell.selectionStyle = .None;
+        return cell
+    }
 }
 ````
 
-Lastly, define your closures which are executed on drawer view button click. Make sure they conform to the ```DrawerViewClosureType```.  Feel free to make whatever closures you want.  Sticking with the GChat theme, examples are included below:
+Lastly, define your closures of type ```DrawerViewClosureType``` which are executed on drawer view button click.  Feel free to make whatever closures you want.  Sticking with the GChat theme, examples are included below:
 
 ````swift
 func emailClosure() -> DrawerViewClosureType {
-func openEmail(text: String) -> (Bool) {
-UIApplication.sharedApplication().openURL(NSURL(string: "mailto:\(text)")!)
-return true
-}
+    func openEmail(text: String) -> (Bool) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "mailto:\(text)")!)
+        return true
+    }
 
-return openEmail
+    return openEmail
 }
 
 
 func phoneClosure() -> DrawerViewClosureType {
-func openPhone(text: String) -> (Bool) {
-let phoneNumber: String = text.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(phoneNumber)")!)
-return true
-}
+    func openPhone(text: String) -> (Bool) {
+        let phoneNumber: String = text.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(phoneNumber)")!)
+        return true
+    }
 
-return openPhone
+    return openPhone
 }
 
 func textClosure() -> DrawerViewClosureType {
-func openMessenger(text: String) -> (Bool) {
-let phoneNumber = text.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-UIApplication.sharedApplication().openURL(NSURL(string: "sms:+\(phoneNumber)")!)
-return true
-}
+    func openMessenger(text: String) -> (Bool) {
+        let phoneNumber = text.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
+        UIApplication.sharedApplication().openURL(NSURL(string: "sms:+\(phoneNumber)")!)
+    return true
+    }
 
-return openMessenger
+    return openMessenger
 }
 ````
 
