@@ -40,17 +40,9 @@ Struct that contains constants used in the project.
 * **Public**
     * **bundle** -> bundle identifier for the pod (EVSlidingTableViewCell)
     * **evTableViewCell** -> nib for the UITableViewCell
-    * **Internal**
-    * **ScalingConstants** -> internal struct with values pertaining to the DrawerView item animation logic
 
 ### ContactItem
-UIView that represents one of the drawer view icons which contains a user defined closure that is executed on buttonClick.  Every ContactItem gets its information from a DrawerViewOption.
-* **Parameters**
-    * **labelText** -> sets the text label for the item
-    * **buttonClosure** -> closure of type ```DrawerViewClosureType```, this closure is executed on buttonClick
-    * **buttonActionText** -> string utilized in closure
-    * **labelColor** -> color of the text for the label
-    * **buttonImage** -> image for the button
+Internal UIView that represents one of the drawer view icons which contains a user defined closure that is executed on buttonClick.  Every ContactItem gets its information from a DrawerViewOption.
 
 ### DrawerViewOption
 Struct that holds values for a ContactItem.  An array of DrawerViewOptions is constructs based off of the number of ContactItem's one wishes to display in the DrawerView (must be between 1 and 4) and then used to populate the ContactItem UIView.
