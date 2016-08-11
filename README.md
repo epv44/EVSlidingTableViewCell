@@ -38,51 +38,51 @@ user_frameworks!
 ### EVConstants
 Struct that contains constants used in the project.
 * **Public**
-* **bundle** -> bundle identifier for the pod (EVSlidingTableViewCell)
-* **evTableViewCell** -> nib for the UITableViewCell
-* **Internal**
-* **ScalingConstants** -> internal struct with values pertaining to the DrawerView item animation logic
+    * **bundle** -> bundle identifier for the pod (EVSlidingTableViewCell)
+    * **evTableViewCell** -> nib for the UITableViewCell
+    * **Internal**
+    * **ScalingConstants** -> internal struct with values pertaining to the DrawerView item animation logic
 
 ### ContactItem
 UIView that represents one of the drawer view icons which contains a user defined closure that is executed on buttonClick.  Every ContactItem gets its information from a DrawerViewOption.
 * **Parameters**
-* **labelText** -> sets the text label for the item
-* **buttonClosure** -> closure of type ```DrawerViewClosureType```, this closure is executed on buttonClick
-* **buttonActionText** -> string utilized in closure
-* **labelColor** -> color of the text for the label
-* **buttonImage** -> image for the button
+    * **labelText** -> sets the text label for the item
+    * **buttonClosure** -> closure of type ```DrawerViewClosureType```, this closure is executed on buttonClick
+    * **buttonActionText** -> string utilized in closure
+    * **labelColor** -> color of the text for the label
+    * **buttonImage** -> image for the button
 
 ### DrawerViewOption
 Struct that holds values for a ContactItem.  An array of DrawerViewOptions is constructs based off of the number of ContactItem's one wishes to display in the DrawerView (must be between 1 and 4) and then used to populate the ContactItem UIView.
 * **Parameters**
-* **closure** -> closure of the type ```DrawerViewClosure``` this is executed on ContactItem's ibAction
-* **valueForButtonAction** -> String that is taken as input by the closure
-* **textForLabel** -> String that is the text for label displayed by the ContactItem
-* **buttonImage** -> UIImage to be displayed on the ContactItem button
+    * **closure** -> closure of the type ```DrawerViewClosure``` this is executed on ContactItem's ibAction
+    * **valueForButtonAction** -> String that is taken as input by the closure
+    * **textForLabel** -> String that is the text for label displayed by the ContactItem
+    * **buttonImage** -> UIImage to be displayed on the ContactItem button
 
 ### SlidingTableViewControllerCell
 UITableViewCell that allows for the Overlay to slide and reveal the drawer.
 * **Public Methods**
-* **setCellWithAttributes(overlayParameters overlayParameters: OverlayDictionaryType, drawerViewOptions: DrawerViewOptionsType, overlayView overlay: EVOverlayView)**
-* Places the ```overlay``` over cell, establishes the drawer view icons as defined by ```drawerViewOptions```, and passes the ```overlayParameters``` to the user defined overlay view.  This action kicks off the UI setup for the overlay view by calling ```setuUI()```.
-* **resetOverlay()** resets the overlay view to the center position.
+    * **setCellWithAttributes(overlayParameters overlayParameters: OverlayDictionaryType, drawerViewOptions: DrawerViewOptionsType, overlayView overlay: EVOverlayView)**
+    * Places the ```overlay``` over cell, establishes the drawer view icons as defined by ```drawerViewOptions```, and passes the ```overlayParameters``` to the user defined overlay view.  This action kicks off the UI setup for the overlay view by calling ```setuUI()```.
+    * **resetOverlay()** resets the overlay view to the center position.
 
 
 ### SlidingTableViewDelegate
 Public protocol serving as the delegate for the SlidingTableViewCell, a complete example implementation is included in the sample project.
 * **Methods**
-* **setDrawerViewOptionsForRow(object: Any) -> DrawerViewOptionsType **
-* Use this method to construct an array of DrawerViewOptions this array is then used to populate the ContactItem UIView
-* **didSelectRowIn(tableView: UITableView, atIndexPath indexPath: NSIndexPath)**
-* Calls ```resetOverlay``` on open cells when a cell is selected
-* Has a default implementation that can be overridden
+    * **setDrawerViewOptionsForRow(object: Any) -> DrawerViewOptionsType **
+        * Use this method to construct an array of DrawerViewOptions this array is then used to populate the ContactItem UIView
+    * **didSelectRowIn(tableView: UITableView, atIndexPath indexPath: NSIndexPath)**
+        * Calls ```resetOverlay``` on open cells when a cell is selected
+        * Has a default implementation that can be overridden
 
 ### EVOverlayView
 UIView that conforms to the EVOverlayProtocol.  When you create your overlay extend EVOverlay, ```UserOverlay: EVOverlayView```.
 * **Parameters**
-* **viewParameters** -> ```OverlayDictionaryType``` contains all the user defined properties from the overlayParameters in the ```cell.setCellWithAttributes(...)``` method call 
+    * **viewParameters** -> ```OverlayDictionaryType``` contains all the user defined properties from the overlayParameters in the ```cell.setCellWithAttributes(...)``` method call 
 * **Methods**
-* **setupUI()** -> Override this method to set up a custom layout for your overlay view, see OverlayView in sample project for an example implementation
+    * **setupUI()** -> Override this method to set up a custom layout for your overlay view, see OverlayView in sample project for an example implementation
 
 ### Extensions
 * **UITableView** -> Adds stored property used to check if overlay view is present or hidden
