@@ -41,7 +41,7 @@ public struct DrawerViewOption {
             return labelText
         }
         set(value){
-            self.labelText = value
+            self.labelText = value ?? ""
         }
     }
     
@@ -50,7 +50,7 @@ public struct DrawerViewOption {
             return icon
         }
         set(value){
-            self.icon = value
+            self.icon = value 
         }
     }
 }
