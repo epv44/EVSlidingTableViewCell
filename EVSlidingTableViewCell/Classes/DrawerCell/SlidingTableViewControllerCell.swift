@@ -129,7 +129,7 @@ public class SlidingTableViewControllerCell: UITableViewCell {
     private func setupDrawerViewUI(){
         containerView.subviews.forEach({ $0.removeFromSuperview() })
         drawerBoxes.removeAll()
-        if drawerViewOptions != nil && drawerViewOptions!.count > 5 {
+        if drawerViewOptions != nil && drawerViewOptions!.count < 5 {
             for option in drawerViewOptions! {
                 let contactView = ContactItem.loadFromNib(NSBundle(forClass: SlidingTableViewControllerCell.classForCoder()))
                 if let image = option.buttonImage {
