@@ -1,6 +1,6 @@
 # EVSlidingTableViewCell
 
-[![CI Status](http://img.shields.io/travis/Eric Vennaro/EVSlidingTableViewCell.svg?style=flat)](https://travis-ci.org/Eric Vennaro/EVSlidingTableViewCell)
+[![CI Status](http://img.shields.io/travis/Eric Vennaro/EVSlidingTableViewCell.svg?style=flat)](https://travis-ci.org/epv44/EVSlidingTableViewCell)
 [![Version](https://img.shields.io/cocoapods/v/EVSlidingTableViewCell.svg?style=flat)](http://cocoapods.org/pods/EVSlidingTableViewCell)
 [![License](https://img.shields.io/cocoapods/l/EVSlidingTableViewCell.svg?style=flat)](http://cocoapods.org/pods/EVSlidingTableViewCell)
 [![Platform](https://img.shields.io/cocoapods/p/EVSlidingTableViewCell.svg?style=flat)](http://cocoapods.org/pods/EVSlidingTableViewCell)
