@@ -19,7 +19,7 @@ public class EVOverlayView: UIView, EVOverlay {
             setupUI()
         }
     }
-    ///method user should override in order to allow for a dynamic cell layout
+    ///Method user should override in order to allow for a dynamic cell layout
     public func setupUI() {
         
     }

@@ -1,5 +1,5 @@
 PODS:
-  - EVSlidingTableViewCell (1.0.1)
+  - EVSlidingTableViewCell (1.1.0)
 
 DEPENDENCIES:
   - EVSlidingTableViewCell (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  EVSlidingTableViewCell: ea2006bf7a18e344430a9063395fba55d223a8be
+  EVSlidingTableViewCell: 9d43da49912a0ada989e2959175c45a7618907db
 
 PODFILE CHECKSUM: 0a008e159d4fdadcf9cad4bbf48bbcb17ee32a7b
 

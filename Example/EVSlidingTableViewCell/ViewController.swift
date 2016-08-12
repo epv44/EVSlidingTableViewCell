@@ -36,6 +36,7 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //delegate method where the default implementation is being used.
         didSelectRowIn(tableView, atIndexPath: indexPath)
     }
     
@@ -50,7 +51,9 @@ extension ViewController: UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = contactsTableView.dequeueReusableCellWithIdentifier(self.reuseIdentifier) as! SlidingTableViewControllerCell
         let user = data[indexPath.row]
+        //set properties for drawer view icons.  In this example they are contact methods
         let contactMethods = setDrawerViewOptionsForRow(user)
+        //set attributes for the specific UITableViewCell
         cell.setCellWithAttributes(overlayParameters: ["name":user.name], drawerViewOptions: contactMethods, overlayView: OverlayView.loadFromNib(nil))
         cell.selectionStyle = .None;
         return cell

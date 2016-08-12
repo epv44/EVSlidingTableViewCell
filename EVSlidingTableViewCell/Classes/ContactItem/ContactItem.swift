@@ -30,7 +30,7 @@ class ContactItem: UIView {
     
     var buttonActionText: String? {
         didSet {
-            actionText = buttonActionText
+            actionText = buttonActionText ?? ""
         }
     }
     
@@ -51,8 +51,10 @@ class ContactItem: UIView {
     }
     
     @IBAction func invokeContactClosure(sender: AnyObject) {
-        guard closure!(actionText!) else {
-            return
+        if closure != nil {
+            guard closure!(actionText!) else {
+                return
+            }
         }
     }
 }

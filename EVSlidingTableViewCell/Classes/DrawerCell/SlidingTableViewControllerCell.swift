@@ -1,7 +1,7 @@
 //
 //  SlidingTableViewControllerCell.swift
 //  SlidingTableViewCell
-///  UITableViewCell that takes a user defined overlay view and allows it to be "swiped" away revealing a serious of IBAction buttons.  As the drawer option buttons are revealed they grow and fade in. 
+//
 //  Created by Eric Vennaro on 7/25/16.
 //  Copyright © 2016 Eric Vennaro. All rights reserved.
 //
@@ -12,6 +12,10 @@ public typealias OverlayDictionaryType = [String:Any?]
 public typealias DrawerViewOptionsType = [DrawerViewOption]
 public typealias DrawerViewClosureType = ((String) -> Bool)
 
+
+/**
+ UITableViewCell that takes a user defined overlay view and allows it to be "swiped" away revealing a serious of IBAction buttons.  As the drawer option buttons are revealed they grow and fade in.
+ */
 public class SlidingTableViewControllerCell: UITableViewCell {
     @IBOutlet private weak var containerView: UIStackView!
     
@@ -25,7 +29,8 @@ public class SlidingTableViewControllerCell: UITableViewCell {
     
     /**
      Set UIAttributes for DrawerView, establish gesture recognizers, and add the user defined overlay to the drawer.
-        - Parameter overlayParameters: Dictionary with String key values that is passed to the user defined overlay upon setup.  Users should store any parameters they need to set the UI of their overlay and then access this dictionary inside the setupUI() method of their overlay.
+     
+        - Parameter overlayParameters: Dictionary [String:Any?] that is passed to the user defined overlay upon setup.  Users should store any parameters they need to set the UI of their overlay and then access this dictionary inside the setupUI() method of their overlay.
         - Parameter drawerViewOptions: List of DrawerViewOption's which apply to the cell being set up.  These parameters are used to load the layout of the DrawerView options.
         - Parameter overlayView: User defined overlay for the cell, of type EVOverlayView which extends UIView
     */
@@ -45,9 +50,7 @@ public class SlidingTableViewControllerCell: UITableViewCell {
         overlayView.parameters = overlayParameters
     }
     
-    /** 
-     Sets overlay to original center position, fully covering the drawer view.
-    */
+    ///Sets overlay to original center position, fully covering the drawer view.
     public func resetOverlay(){
         overlayView.center = originalCenter
     }
@@ -123,7 +126,7 @@ public class SlidingTableViewControllerCell: UITableViewCell {
         }
     }
     
-    //Set gesture recognizer to only pick up on horizontal swipes and allow for normal vertical scrolling of the UITableView
+    ///Set gesture recognizer to only pick up on horizontal swipes and allow for normal vertical scrolling of the UITableView
     override public func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
         if let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer {
             let translation = panGestureRecognizer.translationInView(superview!)
@@ -278,10 +281,14 @@ private extension UIView {
     }
 }
 
-//The delegate of a SlidingTableViewCell must adopt the SlidingTableViewCellDelegate protocol.  Methods of this protocol allow the delegate to handle selections and manage the UIButton IBAction's associated with the drawer view.
+//MARK: Delegate
+/**
+ The delegate of a SlidingTableViewCell must adopt the SlidingTableViewCellDelegate protocol.  Methods of this protocol allow the delegate to handle selections and manage the UIButton IBAction's associated with the drawer view.
+ */
 public protocol SlidingTableViewCellDelegate: class{
     /**
      Set options for DrawerView ContactItem
+     
      - Parameter object: The object used to populate the DrawerViewOptions
      
      - Returns: List of DrawerViewOptions
