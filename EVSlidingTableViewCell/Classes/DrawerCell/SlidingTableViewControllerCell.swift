@@ -1,7 +1,7 @@
 //
 //  SlidingTableViewControllerCell.swift
 //  SlidingTableViewCell
-//  UITableViewCell that takes a user defined overlay view and allows it to be "swiped" away revealing a serious of IBAction buttons.  As the drawer option buttons are revealed they grow and fade in. 
+///  UITableViewCell that takes a user defined overlay view and allows it to be "swiped" away revealing a serious of IBAction buttons.  As the drawer option buttons are revealed they grow and fade in. 
 //  Created by Eric Vennaro on 7/25/16.
 //  Copyright © 2016 Eric Vennaro. All rights reserved.
 //
@@ -25,10 +25,9 @@ public class SlidingTableViewControllerCell: UITableViewCell {
     
     /**
      Set UIAttributes for DrawerView, establish gesture recognizers, and add the user defined overlay to the drawer.
-     - Parameters:
-         - overlayParameters: Dictionary with String key values that is passed to the user defined overlay upon setup.  Users should store any parameters they need to set the UI of their overlay and then access this dictionary inside the setupUI() method of their overlay.
-         - drawerViewOptions: List of DrawerViewOption's which apply to the cell being set up.  These parameters are used to load the layout of the DrawerView options.
-         - overlayView: User defined overlay for the cell, of type EVOverlayView which extends UIView
+     - Parameter overlayParameters: Dictionary with String key values that is passed to the user defined overlay upon setup.  Users should store any parameters they need to set the UI of their overlay and then access this dictionary inside the setupUI() method of their overlay.
+     - Parameter drawerViewOptions: List of DrawerViewOption's which apply to the cell being set up.  These parameters are used to load the layout of the DrawerView options.
+     - Parameter overlayView: User defined overlay for the cell, of type EVOverlayView which extends UIView
     */
     public func setCellWithAttributes(overlayParameters overlayParameters: OverlayDictionaryType, drawerViewOptions: DrawerViewOptionsType, overlayView overlay: EVOverlayView){
         self.drawerViewOptions = drawerViewOptions
@@ -46,7 +45,9 @@ public class SlidingTableViewControllerCell: UITableViewCell {
         overlayView.parameters = overlayParameters
     }
     
-    //Sets overlay to original center position, fully covering the drawer view.
+    /** 
+     Sets overlay to original center position, fully covering the drawer view.
+    */
     public func resetOverlay(){
         overlayView.center = originalCenter
     }
@@ -281,8 +282,7 @@ private extension UIView {
 public protocol SlidingTableViewCellDelegate: class{
     /**
      Set options for DrawerView ContactItem
-     - Parameters:
-        - object: The object used to populate the DrawerViewOptions
+     - Parameter object: The object used to populate the DrawerViewOptions
      
      - Returns: List of DrawerViewOptions
     */
@@ -293,9 +293,8 @@ public protocol SlidingTableViewCellDelegate: class{
 extension SlidingTableViewCellDelegate where Self: UIViewController {
     /**
      Resets Overlay view to center position when the TableViewCell is selected.  You can call this method from didSelectRowAtIndexPath, or you can override.
-     - Parameters:
-         - tableView: UITableView used
-         - indexPath: current NSIndexPath
+     - Parameter tableView: UITableView used
+     - Parameter indexPath: current NSIndexPath
     */
     public func didSelectRowIn(tableView: UITableView, atIndexPath indexPath: NSIndexPath) {
         for cell in tableView.visibleCells as! [SlidingTableViewControllerCell] {

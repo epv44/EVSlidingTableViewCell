@@ -1,7 +1,7 @@
 //
 //  DrawerViewOption.swift
 //  SlidingTableViewCell
-//  Contains the settings used to create a Drawer View Button inside of the drawer view, when the overlay is swiped the drawer view is revealed and is populated based on the values contained here
+///  Contains the settings used to create a Drawer View Button inside of the drawer view, when the overlay is swiped the drawer view is revealed and is populated based on the values contained here
 //  Created by Eric Vennaro on 7/25/16.
 //  Copyright © 2016 Eric Vennaro. All rights reserved.
 //
@@ -14,11 +14,11 @@ public struct DrawerViewOption {
     private var icon: UIImage?
     private var actionClosure: DrawerViewClosureType!
     
-    //initializer method
+    ///initializer method
     public init(){
         
     }
-    //((String) -> Bool) closure executed on IBAction
+    ///((String) -> Bool) closure executed on IBAction
     public var closure: DrawerViewClosureType! {
         get {
             return actionClosure
@@ -27,7 +27,7 @@ public struct DrawerViewOption {
             self.actionClosure = value
         }
     }
-    //String value that is passed into the closure as part of the IBAction
+    ///String value that is passed into the closure as part of the IBAction
     public var valueForButtonAction: String? {
         get{
             return associateContactValue
@@ -36,7 +36,7 @@ public struct DrawerViewOption {
             self.associateContactValue = value ?? ""
         }
     }
-    //String label placed below the UIButton
+    ///String label placed below the UIButton
     public var textForLabel: String? {
         get{
             return labelText
@@ -45,7 +45,7 @@ public struct DrawerViewOption {
             self.labelText = value ?? ""
         }
     }
-    //UIImage used by the UIButton.
+    ///UIImage used by the UIButton.
     public var buttonImage: UIImage? {
         get{
             return icon
