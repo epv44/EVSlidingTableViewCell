@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EVSlidingTableViewCell'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.homepage         = 'https://github.com/epv44/EVSlidingTableViewCell'
   s.author           = { 'Eric Vennaro' => 'epv9@case.edu' }
   s.summary          = 'UITableViewCell implementing "swipe to reveal" a drawer view with customizable action buttons'
