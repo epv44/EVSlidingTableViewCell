@@ -25,9 +25,9 @@ public class SlidingTableViewControllerCell: UITableViewCell {
     
     /**
      Set UIAttributes for DrawerView, establish gesture recognizers, and add the user defined overlay to the drawer.
-     - Parameter overlayParameters: Dictionary with String key values that is passed to the user defined overlay upon setup.  Users should store any parameters they need to set the UI of their overlay and then access this dictionary inside the setupUI() method of their overlay.
-     - Parameter drawerViewOptions: List of DrawerViewOption's which apply to the cell being set up.  These parameters are used to load the layout of the DrawerView options.
-     - Parameter overlayView: User defined overlay for the cell, of type EVOverlayView which extends UIView
+        - Parameter overlayParameters: Dictionary with String key values that is passed to the user defined overlay upon setup.  Users should store any parameters they need to set the UI of their overlay and then access this dictionary inside the setupUI() method of their overlay.
+        - Parameter drawerViewOptions: List of DrawerViewOption's which apply to the cell being set up.  These parameters are used to load the layout of the DrawerView options.
+        - Parameter overlayView: User defined overlay for the cell, of type EVOverlayView which extends UIView
     */
     public func setCellWithAttributes(overlayParameters overlayParameters: OverlayDictionaryType, drawerViewOptions: DrawerViewOptionsType, overlayView overlay: EVOverlayView){
         self.drawerViewOptions = drawerViewOptions
@@ -293,6 +293,7 @@ public protocol SlidingTableViewCellDelegate: class{
 extension SlidingTableViewCellDelegate where Self: UIViewController {
     /**
      Resets Overlay view to center position when the TableViewCell is selected.  You can call this method from didSelectRowAtIndexPath, or you can override.
+        
      - Parameter tableView: UITableView used
      - Parameter indexPath: current NSIndexPath
     */

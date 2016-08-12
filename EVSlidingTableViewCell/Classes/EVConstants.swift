@@ -1,13 +1,14 @@
 //
 //  ScalingConstants.swift
 //  SlidingTableViewCell
-///  Constants used by the application
+//
 //  Created by Eric Vennaro on 7/28/16.
 //  Copyright © 2016 Eric Vennaro. All rights reserved.
 //
 
 import UIKit
 
+///  Constants used by the application
 public struct EVConstants {
     ///Bundle for the Cocoapod library
     public static let bundle = NSBundle(forClass: SlidingTableViewControllerCell.classForCoder())
