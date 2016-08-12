@@ -9,6 +9,8 @@
 
 EVSlidingTableViewCell is a custom UITableViewCell that implements the "slide to reveal" functionality similar to GChat.  It supports between 1 and 4 configurable action buttons that are revealed as the user defined overlay is slid away.
 
+![Screenshot0][img0]
+
 ## Usage
 
 To run the sample project, clone the repo, and run `pod install` from the Example directory.
@@ -191,7 +193,7 @@ Eric Vennaro, epv9@case.edu
 EVSlidingTableViewCell is available under the [MIT License][mitLink]. See the LICENSE file for more info.
 >**Copyright &copy; 2016-present Eric Vennaro.**
 
-[img0]:https://raw.githubusercontent.com/epv44/EVTopTabBar/master/tabBar.gif
+[img0]:https://raw.githubusercontent.com/epv44/EVSlidingTableViewCell/master/SlidingTableViewCell.gif
 [podLink]:http://cocoapods.org
 [blogLink]:http://www.ericvennaro.com
 [mitLink]:http://opensource.org/licenses/MIT
