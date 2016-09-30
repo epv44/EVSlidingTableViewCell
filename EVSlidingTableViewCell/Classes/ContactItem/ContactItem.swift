@@ -9,12 +9,12 @@
 import UIKit
 
 class ContactItem: UIView {
-    @IBOutlet private weak var button: UIButton!
-    @IBOutlet private weak var title: UILabel!
+    @IBOutlet fileprivate weak var button: UIButton!
+    @IBOutlet fileprivate weak var title: UILabel!
     @IBOutlet weak var itemContainer: UIView!
     
-    private var closure: DrawerViewClosureType?
-    private var actionText: String?
+    fileprivate var closure: DrawerViewClosureType?
+    fileprivate var actionText: String?
     
     var labelText: String = "" {
         didSet {
@@ -42,7 +42,7 @@ class ContactItem: UIView {
     
     var buttonImage: UIImage = UIImage() {
         didSet {
-            button.setImage(buttonImage, forState: .Normal)
+            button.setImage(buttonImage, for: UIControlState())
         }
     }
     
@@ -50,7 +50,7 @@ class ContactItem: UIView {
         super.init(coder: aDecoder)
     }
     
-    @IBAction func invokeContactClosure(sender: AnyObject) {
+    @IBAction func invokeContactClosure(_ sender: AnyObject) {
         if closure != nil {
             guard closure!(actionText!) else {
                 return

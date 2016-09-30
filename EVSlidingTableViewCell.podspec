@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EVSlidingTableViewCell'
-  s.version          = '1.1.0'
+  s.version          = '2.0.0'
   s.homepage         = 'https://github.com/epv44/EVSlidingTableViewCell'
   s.author           = { 'Eric Vennaro' => 'epv9@case.edu' }
   s.summary          = 'UITableViewCell implementing "swipe to reveal" a drawer view with customizable action buttons'
@@ -14,7 +14,6 @@ Custom UITableViewCell that can be swiped either way to reveal a "drawer" with b
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Eric Vennaro' => 'epv9@case.edu' }
   s.source           = { :git => 'https://github.com/epv44/EVSlidingTableViewCell.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.3'
 
@@ -23,8 +22,4 @@ Custom UITableViewCell that can be swiped either way to reveal a "drawer" with b
   s.resource_bundles = {
     'EVSlidingTableViewCell' => ['EVSlidingTableViewCell/Classes/**/*.{xib}']
   }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end

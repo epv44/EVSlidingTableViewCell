@@ -11,6 +11,7 @@ import EVSlidingTableViewCell
 
 class OverlayView: EVOverlayView {
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private  weak var subtitleLabel: UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -22,6 +23,5 @@ class OverlayView: EVOverlayView {
     
     override func setupUI(){
         titleLabel.text = viewParameters!["name"] as? String
-        alpha = 0.5
     }
 }

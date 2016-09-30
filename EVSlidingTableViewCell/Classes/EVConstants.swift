@@ -11,7 +11,7 @@ import UIKit
 ///  Constants used by the application
 public struct EVConstants {
     ///Bundle for the Cocoapod library
-    public static let bundle = NSBundle(forClass: SlidingTableViewControllerCell.classForCoder())
+    public static let bundle = Bundle(for: SlidingTableViewControllerCell.classForCoder())
     ///UINib of the TableViewCell used by the Cocoapod library
     public static let evTableViewCell = UINib(nibName: "SlidingTableViewControllerCell", bundle: bundle)
     
@@ -19,7 +19,7 @@ public struct EVConstants {
         static let buffer: CGFloat = 40.0
         static let growthFactorLimit: CGFloat = 0.93
         static let offset: CGFloat = 20.0
-        private static var growthRateValue: CGFloat = 0.01
+        fileprivate static var growthRateValue: CGFloat = 0.01
 
         static var growthRate: CGFloat {
             get {

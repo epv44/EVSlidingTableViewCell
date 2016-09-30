@@ -9,7 +9,7 @@
 import UIKit
 
 extension UITableViewCell {
-    private struct AssociatedKeys {
+    fileprivate struct AssociatedKeys {
         static var drawerDisplayed: Bool = false
     }
     

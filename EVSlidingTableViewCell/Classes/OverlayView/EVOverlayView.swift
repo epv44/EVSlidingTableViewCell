@@ -9,18 +9,18 @@
 import UIKit
 
 ///  Base class for the view that overlay's the drawer view.  User's should extend this class and create their own Overlay view's.
-public class EVOverlayView: UIView, EVOverlay {
+open class EVOverlayView: UIView, EVOverlay {
     ///Dictionary of parameters [String:Any?] that the user should access inside the setupUI() method in order to set the layout for their cell
-    public var viewParameters: OverlayDictionaryType?
+    open var viewParameters: OverlayDictionaryType?
     ///Stored property that updates the viewParameters and calls the setupUI() method
-    public var parameters: OverlayDictionaryType? {
+    open var parameters: OverlayDictionaryType? {
         didSet {
             viewParameters = parameters
             setupUI()
         }
     }
     ///Method user should override in order to allow for a dynamic cell layout
-    public func setupUI() {
+    open func setupUI() {
         
     }
 }

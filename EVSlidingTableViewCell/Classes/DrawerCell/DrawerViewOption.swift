@@ -12,10 +12,10 @@ import Foundation
  Contains the settings used to create a Drawer View Button inside of the drawer view, when the overlay is swiped the drawer view is revealed and is populated based on the values contained here
  */
 public struct DrawerViewOption {
-    private var labelText: String?
-    private var associateContactValue: String?
-    private var icon: UIImage?
-    private var actionClosure: DrawerViewClosureType!
+    fileprivate var labelText: String?
+    fileprivate var associateContactValue: String?
+    fileprivate var icon: UIImage?
+    fileprivate var actionClosure: DrawerViewClosureType!
     
     ///Initializer
     public init(){

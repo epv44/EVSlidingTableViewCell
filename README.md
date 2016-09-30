@@ -17,7 +17,7 @@ To run the sample project, clone the repo, and run `pod install` from the Exampl
 
 ## Requirements
 
-* Swift 2.0+
+* Swift 3.0+
 * iOS 9.0+
 
 ## Installation
@@ -65,9 +65,9 @@ UITableViewCell that allows for the overlay to slide and reveal the drawer.
 ### SlidingTableViewDelegate
 Public protocol serving as the delegate for the SlidingTableViewCell, a complete example implementation is included in the sample project.
 * **Methods**
-    * **setDrawerViewOptionsForRow(object: Any) -> DrawerViewOptionsType**
+    * **setDrawerViewOptionsForRow(_ object: Any) -> DrawerViewOptionsType**
         * Use this method to construct an array of ```DrawerViewOptions``` this array is then used to populate the ContactItem UIView
-    * **didSelectRowIn(tableView: UITableView, atIndexPath indexPath: NSIndexPath)**
+    * **didSelectRowIn(_ tableView: UITableView, atIndexPath indexPath: NSIndexPath)**
         * Calls ```resetOverlay``` on open cells when a cell is selected
         * Has a default implementation that can be overridden
 
@@ -115,8 +115,8 @@ Extend the SlidingTableViewCellDelegate and implement the ```setDrawerViewOption
 
 ````swift
 extension ViewController: SlidingTableViewCellDelegate {
-    //there is a more robust example inside the example project
-    func setDrawerViewOptionsForRow(object: Any) -> DrawerViewOptionsType {
+    //a complete example can be found in the sample project
+    func setDrawerViewOptionsForRow(_ object: Any) -> DrawerViewOptionsType {
         var contactMethods = DrawerViewOptionsType()
         //set contactMethods values for the label, image, and closure...
         //e.i. contactMethods.closure = emailClosure()
@@ -130,7 +130,7 @@ Make sure to correctly link to this cell inside of your UITableViewDelegate/Data
 ````swift
 //MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //calls delegate method to replace overlay you can overwrite this method inside of the SlidingTableViewCellDelegate
         didSelectRowIn(tableView, atIndexPath: indexPath)
     }
@@ -138,7 +138,7 @@ extension ViewController: UITableViewDelegate {
 
 //MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = contactsTableView.dequeueReusableCellWithIdentifier(self.reuseIdentifier) as! SlidingTableViewControllerCell
         let user = data[indexPath.row]
         //calls delegateMethod

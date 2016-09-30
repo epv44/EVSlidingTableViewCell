@@ -21,9 +21,9 @@ public extension UIViewLoading where Self : UIView {
      
      - Returns: The properly instantiated UINib
     */
-    static func loadFromNib(bundle: NSBundle?) -> Self {
-        let nibName = "\(self)".characters.split(".").map(String.init).last!
+    static func loadFromNib(_ bundle: Bundle?) -> Self {
+        let nibName = "\(self)".characters.split(separator: ".").map(String.init).last!
         let nib = UINib(nibName: nibName, bundle: bundle)
-        return nib.instantiateWithOwner(self, options: nil).first as! Self
+        return nib.instantiate(withOwner: self, options: nil).first as! Self
     }
 }
