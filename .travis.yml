@@ -5,7 +5,7 @@ env:
    global:
    - LANG=en_US.UTF-8
 
-   - PROJECT="EVSlidingTableViewCell.xcworkspace"
+   - PROJECT="Example/EVSlidingTableViewCell.xcworkspace"
 
    - IOS_SCHEME="EVSlidingTableViewCell-Example"
 
@@ -25,7 +25,7 @@ script:
   fi
 
 - if [ $BUILD_EXAMPLE == "YES" ]; then
-      xcodebuild clean build -project Example/Example.xcodeproj -scheme Example -sdk "$SDK" -destination "$DESTINATION" ONLY_ACTIVE_ARCH=NO | xcpretty -c;
+      xcodebuild clean build -project Example/EVSlidingTableViewCell.xcodeproj -scheme Example -sdk "$SDK" -destination "$DESTINATION" ONLY_ACTIVE_ARCH=NO | xcpretty -c;
   fi
 
 - if [ $RUN_TESTS == "YES" ]; then
