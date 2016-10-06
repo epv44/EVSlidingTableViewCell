@@ -41,12 +41,12 @@ Create your custom Overlay View.  This is the view you want to swipe away to rev
 
 ````swift
 import EVSlidingTableViewCell
-class OverlayView: EVOverlayView {
-@IBOutlet private weak var titleLabel: UILabel!
-//override this method
-override func setupUI(){
-titleLabel.text = viewParameters["titleLabelText"]
-}
+    class OverlayView: EVOverlayView {
+        @IBOutlet private weak var titleLabel: UILabel!
+        //override this method
+        override func setupUI(){
+        titleLabel.text = viewParameters["titleLabelText"]
+    }
 }
 ````
 
@@ -62,13 +62,13 @@ Extend the SlidingTableViewCellDelegate and implement the ```setDrawerViewOption
 
 ````swift
 extension ViewController: SlidingTableViewCellDelegate {
-//a complete example can be found in the sample project
-func setDrawerViewOptionsForRow(_ object: Any) -> DrawerViewOptionsType {
-var contactMethods = DrawerViewOptionsType()
-//set contactMethods values for the label, image, and closure...
-//e.i. contactMethods.closure = emailClosure()
-return contactMethods 
-}
+    //a complete example can be found in the sample project
+    func setDrawerViewOptionsForRow(_ object: Any) -> DrawerViewOptionsType {
+        var contactMethods = DrawerViewOptionsType()
+        //set contactMethods values for the label, image, and closure...
+        //e.i. contactMethods.closure = emailClosure()
+        return contactMethods 
+    }
 }
 ````
 
@@ -77,23 +77,23 @@ Make sure to correctly link to this cell inside of your UITableViewDelegate/Data
 ````swift
 //MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
-func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-//calls delegate method to replace overlay you can overwrite this method inside of the SlidingTableViewCellDelegate
-didSelectRowIn(tableView, atIndexPath: indexPath)
-}
+    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    //calls delegate method to replace overlay you can overwrite this method inside of the SlidingTableViewCellDelegate
+    didSelectRowIn(tableView, atIndexPath: indexPath)
+    }
 }
 
 //MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
-func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-let cell = contactsTableView.dequeueReusableCellWithIdentifier(self.reuseIdentifier) as! SlidingTableViewControllerCell
-let user = data[indexPath.row]
-//calls delegateMethod
-let contactMethods = setDrawerViewOptionsForRow(user)
-cell.setCellWithAttributes(overlayParameters: [:], drawerViewOptions: contactMethods, overlayView: OverlayView.loadFromNib(nil))
-cell.selectionStyle = .None;
-return cell
-}
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = contactsTableView.dequeueReusableCellWithIdentifier(self.reuseIdentifier) as! SlidingTableViewControllerCell
+        let user = data[indexPath.row]
+        //calls delegateMethod
+        let contactMethods = setDrawerViewOptionsForRow(user)
+        cell.setCellWithAttributes(overlayParameters: [:], drawerViewOptions: contactMethods, overlayView: OverlayView.loadFromNib(nil))
+        cell.selectionStyle = .None;
+        return cell
+    }
 }
 ````
 
@@ -101,33 +101,33 @@ Lastly, define your closures of type ```DrawerViewClosureType``` which are execu
 
 ````swift
 func emailClosure() -> DrawerViewClosureType {
-func openEmail(text: String) -> (Bool) {
-UIApplication.sharedApplication().openURL(NSURL(string: "mailto:\(text)")!)
-return true
-}
+    func openEmail(text: String) -> (Bool) {
+        UIApplication.sharedApplication().openURL(NSURL(string: "mailto:\(text)")!)
+        return true
+    }
 
-return openEmail
+    return openEmail
 }
 
 
 func phoneClosure() -> DrawerViewClosureType {
-func openPhone(text: String) -> (Bool) {
-let phoneNumber: String = text.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(phoneNumber)")!)
-return true
-}
+    func openPhone(text: String) -> (Bool) {
+        let phoneNumber: String = text.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
+        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(phoneNumber)")!)
+        return true
+    }
 
-return openPhone
+    return openPhone
 }
 
 func textClosure() -> DrawerViewClosureType {
-func openMessenger(text: String) -> (Bool) {
-let phoneNumber = text.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-UIApplication.sharedApplication().openURL(NSURL(string: "sms:+\(phoneNumber)")!)
-return true
-}
+    func openMessenger(text: String) -> (Bool) {
+        let phoneNumber = text.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
+        UIApplication.sharedApplication().openURL(NSURL(string: "sms:+\(phoneNumber)")!)
+        return true
+    }
 
-return openMessenger
+    return openMessenger
 }
 ````
 
