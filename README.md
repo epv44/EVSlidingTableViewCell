@@ -34,6 +34,102 @@ Also include
 ```ruby
 user_frameworks!
 ```
+## Getting Started
+
+### 1. Create The Overlay View
+Create your custom Overlay View.  This is the view you want to swipe away to reveal the drawer options.  Make sure to override the ```setupUI``` method, because it is called by the DrawerView and allows for the easy setup of the UIAttributes in your cell.  The ```viewParameters``` dictionary is available from this method, place the parameters you want in this dictionary and access them to setup your view within the Overlay.
+
+````swift
+import EVSlidingTableViewCell
+class OverlayView: EVOverlayView {
+@IBOutlet private weak var titleLabel: UILabel!
+//override this method
+override func setupUI(){
+titleLabel.text = viewParameters["titleLabelText"]
+}
+}
+````
+
+### 2. Register Cell In View Controller
+
+Register the custom cell to the UITableView, same as any other custom cell.
+
+````swift
+tableView.registerNib(EVConstants.evTableViewCell, forCellReuseIdentifier: reuseIdentifier)
+````
+
+Extend the SlidingTableViewCellDelegate and implement the ```setDrawerViewOptionsForRow``` method 
+
+````swift
+extension ViewController: SlidingTableViewCellDelegate {
+//a complete example can be found in the sample project
+func setDrawerViewOptionsForRow(_ object: Any) -> DrawerViewOptionsType {
+var contactMethods = DrawerViewOptionsType()
+//set contactMethods values for the label, image, and closure...
+//e.i. contactMethods.closure = emailClosure()
+return contactMethods 
+}
+}
+````
+
+Make sure to correctly link to this cell inside of your UITableViewDelegate/DataSource
+
+````swift
+//MARK: - UITableViewDelegate
+extension ViewController: UITableViewDelegate {
+func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+//calls delegate method to replace overlay you can overwrite this method inside of the SlidingTableViewCellDelegate
+didSelectRowIn(tableView, atIndexPath: indexPath)
+}
+}
+
+//MARK: - UITableViewDataSource
+extension ViewController: UITableViewDataSource {
+func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+let cell = contactsTableView.dequeueReusableCellWithIdentifier(self.reuseIdentifier) as! SlidingTableViewControllerCell
+let user = data[indexPath.row]
+//calls delegateMethod
+let contactMethods = setDrawerViewOptionsForRow(user)
+cell.setCellWithAttributes(overlayParameters: [:], drawerViewOptions: contactMethods, overlayView: OverlayView.loadFromNib(nil))
+cell.selectionStyle = .None;
+return cell
+}
+}
+````
+
+Lastly, define your closures of type ```DrawerViewClosureType``` which are executed on drawer view button click.  Feel free to make whatever closures you want.  Sticking with the GChat theme, examples are included below:
+
+````swift
+func emailClosure() -> DrawerViewClosureType {
+func openEmail(text: String) -> (Bool) {
+UIApplication.sharedApplication().openURL(NSURL(string: "mailto:\(text)")!)
+return true
+}
+
+return openEmail
+}
+
+
+func phoneClosure() -> DrawerViewClosureType {
+func openPhone(text: String) -> (Bool) {
+let phoneNumber: String = text.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
+UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(phoneNumber)")!)
+return true
+}
+
+return openPhone
+}
+
+func textClosure() -> DrawerViewClosureType {
+func openMessenger(text: String) -> (Bool) {
+let phoneNumber = text.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
+UIApplication.sharedApplication().openURL(NSURL(string: "sms:+\(phoneNumber)")!)
+return true
+}
+
+return openMessenger
+}
+````
 
 ## Project Description
 
@@ -86,103 +182,6 @@ UIView that conforms to the EVOverlayProtocol.  When you create your overlay ext
 * **OverlayDictionaryType** -> ```[String:Any?]```
 * **DrawerViewOptionType** -> ```[DrawerViewOption]```
 * **DrawerViewClosureType** -> ```((String) -> Bool)```
-
-## Getting Started
-
-### 1. Create The Overlay View
-Create your custom Overlay View.  This is the view you want to swipe away to reveal the drawer options.  Make sure to override the ```setupUI``` method, because it is called by the DrawerView and allows for the easy setup of the UIAttributes in your cell.  The ```viewParameters``` dictionary is available from this method, place the parameters you want in this dictionary and access them to setup your view within the Overlay.
-
-````swift
-import EVSlidingTableViewCell
-class OverlayView: EVOverlayView {
-    @IBOutlet private weak var titleLabel: UILabel!
-    //override this method
-    override func setupUI(){
-        titleLabel.text = viewParameters["titleLabelText"]
-    }
-}
-````
-
-### 2. Register Cell In View Controller
-
-Register the custom cell to the UITableView, same as any other custom cell.
-
-````swift
-tableView.registerNib(EVConstants.evTableViewCell, forCellReuseIdentifier: reuseIdentifier)
-````
-
-Extend the SlidingTableViewCellDelegate and implement the ```setDrawerViewOptionsForRow``` method 
-
-````swift
-extension ViewController: SlidingTableViewCellDelegate {
-    //a complete example can be found in the sample project
-    func setDrawerViewOptionsForRow(_ object: Any) -> DrawerViewOptionsType {
-        var contactMethods = DrawerViewOptionsType()
-        //set contactMethods values for the label, image, and closure...
-        //e.i. contactMethods.closure = emailClosure()
-        return contactMethods 
-    }
-}
-````
-
-Make sure to correctly link to this cell inside of your UITableViewDelegate/DataSource
-
-````swift
-//MARK: - UITableViewDelegate
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //calls delegate method to replace overlay you can overwrite this method inside of the SlidingTableViewCellDelegate
-        didSelectRowIn(tableView, atIndexPath: indexPath)
-    }
-}
-
-//MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = contactsTableView.dequeueReusableCellWithIdentifier(self.reuseIdentifier) as! SlidingTableViewControllerCell
-        let user = data[indexPath.row]
-        //calls delegateMethod
-        let contactMethods = setDrawerViewOptionsForRow(user)
-        cell.setCellWithAttributes(overlayParameters: [:], drawerViewOptions: contactMethods, overlayView: OverlayView.loadFromNib(nil))
-        cell.selectionStyle = .None;
-        return cell
-    }
-}
-````
-
-Lastly, define your closures of type ```DrawerViewClosureType``` which are executed on drawer view button click.  Feel free to make whatever closures you want.  Sticking with the GChat theme, examples are included below:
-
-````swift
-func emailClosure() -> DrawerViewClosureType {
-    func openEmail(text: String) -> (Bool) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "mailto:\(text)")!)
-        return true
-    }
-
-    return openEmail
-}
-
-
-func phoneClosure() -> DrawerViewClosureType {
-    func openPhone(text: String) -> (Bool) {
-        let phoneNumber: String = text.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-        UIApplication.sharedApplication().openURL(NSURL(string: "tel://\(phoneNumber)")!)
-        return true
-    }
-
-    return openPhone
-}
-
-func textClosure() -> DrawerViewClosureType {
-    func openMessenger(text: String) -> (Bool) {
-        let phoneNumber = text.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet).joinWithSeparator("")
-        UIApplication.sharedApplication().openURL(NSURL(string: "sms:+\(phoneNumber)")!)
-    return true
-    }
-
-    return openMessenger
-}
-````
 
 ## Author
 
