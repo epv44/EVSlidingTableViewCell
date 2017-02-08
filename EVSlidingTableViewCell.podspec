@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'EVSlidingTableViewCell'
-  s.version          = '2.0.2'
+  s.version          = '2.0.3'
   s.homepage         = 'https://github.com/epv44/EVSlidingTableViewCell'
   s.author           = { 'Eric Vennaro' => 'epv9@case.edu' }
   s.summary          = 'UITableViewCell implementing "swipe to reveal" a drawer view with customizable action buttons'
@@ -14,6 +14,7 @@ Custom UITableViewCell that can be swiped either way to reveal a "drawer" with b
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Eric Vennaro' => 'epv9@case.edu' }
   s.source           = { :git => 'https://github.com/epv44/EVSlidingTableViewCell.git', :tag => s.version.to_s }
+  s.documentation_url = 'https://epv44.github.io/docs/EVSlidingTableViewCell/index.html'
 
   s.ios.deployment_target = '9.3'
 
