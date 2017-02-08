@@ -34,6 +34,10 @@ Also include
 ```ruby
 user_frameworks!
 ```
+
+## Documentation
+Read the [docs][docsLink]. Generated with [jazzy](https://github.com/realm/jazzy)
+
 ## Getting Started
 
 ### 1. Create The Overlay View
@@ -197,3 +201,4 @@ EVSlidingTableViewCell is available under the [MIT License][mitLink]. See the LI
 [blogLink]:http://www.ericvennaro.com
 [mitLink]:http://opensource.org/licenses/MIT
 [stackoverflow]:http://stackoverflow.com/questions/25513271/how-to-initialise-a-uiview-class-with-a-xib-file-in-swift-ios
+[docsLink]:https://epv44.github.io/docs/EVSlidingTableViewCell/index.html
