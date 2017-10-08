@@ -9,12 +9,12 @@
 import UIKit
 
 class ContactItem: UIView {
-    @IBOutlet fileprivate weak var button: UIButton!
-    @IBOutlet fileprivate weak var title: UILabel!
+    @IBOutlet private weak var button: UIButton!
+    @IBOutlet private weak var title: UILabel!
     @IBOutlet weak var itemContainer: UIView!
     
-    fileprivate var closure: DrawerViewClosureType?
-    fileprivate var actionText: String?
+    private var closure: DrawerViewClosureType?
+    private var actionText: String?
     
     var labelText: String = "" {
         didSet {

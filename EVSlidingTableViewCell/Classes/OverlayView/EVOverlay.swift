@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol EVOverlay{
+protocol EVOverlay {
     var parameters: OverlayDictionaryType? { get set }
     
     func setupUI()

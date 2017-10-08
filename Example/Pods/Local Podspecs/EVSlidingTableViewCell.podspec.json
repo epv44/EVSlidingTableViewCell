@@ -1,6 +1,6 @@
 {
   "name": "EVSlidingTableViewCell",
-  "version": "1.1.0",
+  "version": "2.0.3",
   "homepage": "https://github.com/epv44/EVSlidingTableViewCell",
   "authors": {
     "Eric Vennaro": "epv9@case.edu"
@@ -13,8 +13,9 @@
   },
   "source": {
     "git": "https://github.com/epv44/EVSlidingTableViewCell.git",
-    "tag": "1.1.0"
+    "tag": "2.0.3"
   },
+  "documentation_url": "https://epv44.github.io/docs/EVSlidingTableViewCell/index.html",
   "platforms": {
     "ios": "9.3"
   },

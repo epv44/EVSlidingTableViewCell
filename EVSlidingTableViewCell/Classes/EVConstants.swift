@@ -19,7 +19,7 @@ public struct EVConstants {
         static let buffer: CGFloat = 40.0
         static let growthFactorLimit: CGFloat = 0.93
         static let offset: CGFloat = 20.0
-        fileprivate static var growthRateValue: CGFloat = 0.01
+        private static var growthRateValue: CGFloat = 0.01
 
         static var growthRate: CGFloat {
             get {

@@ -7,122 +7,122 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01B74F39E34CA2A0A0AFE5693F323624 /* SlidingTableViewControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FF198EB72DBE844B878C097F377E80B /* SlidingTableViewControllerCell.xib */; };
-		08567C37F28A911CA81400788B236B25 /* SlidingTableViewControllerCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = C06856C22F6755540EB6FA730C9248EE /* SlidingTableViewControllerCell.xib */; };
-		1C20D841E75A0A84105D56814A3FB808 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		26CE88486245CE21764DABC9C70099DB /* EVSlidingTableViewCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 700E750A125473F8067540BD85DD35A9 /* EVSlidingTableViewCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AFD362B3380C49A2F863EF4C8B91327 /* SlidingTableViewControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06856C22F6755540EB6FA730C9248EE /* SlidingTableViewControllerCell.xib */; };
-		47D67E8B7A9F52CA16863B420A15B223 /* SlidingTableViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C02F72C5AF06089E1CAC2CE20D56D7 /* SlidingTableViewControllerCell.swift */; };
-		4E792CB795B62A8175A018EABA4B8B2B /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC99458E8AABE58DDDD957EDED079B /* UITableViewCellExtension.swift */; };
-		572C27588A20ED0B9FD5E827422EE5C4 /* Pods-EVSlidingTableViewCell_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 27ED834B8CFE37500B912A37D05E78FE /* Pods-EVSlidingTableViewCell_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B650D97621F21F22ED89E393A105BF6 /* EVOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE0CB60C4BCE5C6EE517AB6AFD7E777 /* EVOverlay.swift */; };
-		5EE1B9F2830624684F86FB5F208CE7A3 /* EVOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46E951704C80E18CB026F4707722F35A /* EVOverlayView.swift */; };
-		61C258F5324E24BF7A91DD531DA90820 /* DrawerViewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC188759276A0C351A698A76A2C8144 /* DrawerViewOption.swift */; };
-		7258A6D02FF0B400470959A6C2325458 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		85F4BA8F59620AEBBBDF7032621C6A7E /* SlidingTableViewControllerCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 87A9703880EFC4923569725408953C3E /* SlidingTableViewControllerCell.xib */; };
-		89F2BCB38FCE5DAFD4AED0902732454B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */; };
-		9EDEA7F59FA160F383E794B9209B8C2C /* EVSlidingTableViewCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6A04D0A7830AD8A6D95FF230050967 /* EVSlidingTableViewCell-dummy.m */; };
-		A279DF2091AB67A56B7C432FE6A27E9B /* ContactItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5B47604A4E5099A4F74A874F99C4337 /* ContactItem.xib */; };
-		A620FC93FE7DB9D5B5DDCA7041E4D213 /* UIViewLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62B23A7305F111B88794F8F2302DF850 /* UIViewLoading.swift */; };
-		ABEE76E0A2C52591DACFC72CA7D15AD0 /* ContactItem.xib in Sources */ = {isa = PBXBuildFile; fileRef = A5B47604A4E5099A4F74A874F99C4337 /* ContactItem.xib */; };
-		BE181B983AE85DBEB48C75E7577B56E3 /* EVSlidingTableViewCell.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4A011A85B9DCF06FF4CBC5BFCB1EF79 /* EVSlidingTableViewCell.bundle */; };
-		C7355860A9834BAEB341AE0EC742BB8A /* Pods-EVSlidingTableViewCell_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDAC2F39148915FFB7086BE26332769A /* Pods-EVSlidingTableViewCell_Tests-dummy.m */; };
-		D341352780B3B336521A9522691B82F6 /* Pods-EVSlidingTableViewCell_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29F583C467C9AE142037EA4FAA77BFDC /* Pods-EVSlidingTableViewCell_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D5E077156346F239CB3A09AF786320EF /* Pods-EVSlidingTableViewCell_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0922BC32BF2497A1963008B3A98B8223 /* Pods-EVSlidingTableViewCell_Example-dummy.m */; };
-		EF3637BA6DBB9843612C893051E53F75 /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3EECDC19D931394C811B1317DABAA5 /* ContactItem.swift */; };
-		FEF82AF87ECD3B3FD1151FA05650541B /* EVConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D68D955689922631D67FBDF93233EF47 /* EVConstants.swift */; };
+		1DE16B7F488E15FB557BCE58E0F55ECC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		2C47E01FF3FF89D9E3FE62E850714CC9 /* EVSlidingTableViewCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D25E0CC3E19E8D88243E43C543286DA4 /* EVSlidingTableViewCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		422583C7D4F71E3AACD66C36727FFAAD /* EVOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06807AEA49DF088ACB566F4ED25388 /* EVOverlayView.swift */; };
+		6DD8D0100480DBFBC19D1F22EA39AA9F /* Pods-EVSlidingTableViewCell_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0922BC32BF2497A1963008B3A98B8223 /* Pods-EVSlidingTableViewCell_Example-dummy.m */; };
+		6F430D268B7EBFD5BDBF0EA75B906E72 /* SlidingTableViewControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC2C97A21773E205A3EE3F58498039B /* SlidingTableViewControllerCell.xib */; };
+		7540AB4745F2CCD0C9CCCE233D2BD11B /* ContactItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8614A5089290D6C4691534EF1FA6863 /* ContactItem.xib */; };
+		7E195FBF9367260E6900814DF327F570 /* Pods-EVSlidingTableViewCell_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 29F583C467C9AE142037EA4FAA77BFDC /* Pods-EVSlidingTableViewCell_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80147BF6E44215FCBAE5DFBA09FBB4A3 /* Pods-EVSlidingTableViewCell_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 27ED834B8CFE37500B912A37D05E78FE /* Pods-EVSlidingTableViewCell_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		816CCB9F376CE4B89138B857CE5F4AAB /* Pods-EVSlidingTableViewCell_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDAC2F39148915FFB7086BE26332769A /* Pods-EVSlidingTableViewCell_Tests-dummy.m */; };
+		81F054FF7EEB1EBDF1A399D2E2DBE18D /* SlidingTableViewControllerCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = ABC2C97A21773E205A3EE3F58498039B /* SlidingTableViewControllerCell.xib */; };
+		83686370E6C4590D16899A61CBCF7636 /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF345A4CA659A3F0DFCE267F98DCF40D /* UITableViewCellExtension.swift */; };
+		971D67D245574CB6E07810DF77A2E4C4 /* UIViewLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72FB3B3333818BD9331385CA3C8EE5A /* UIViewLoading.swift */; };
+		9AF35F30FCA1A4F824DE1C003037E43E /* EVOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5E0B25C31AD90FEF044C64D65502E6 /* EVOverlay.swift */; };
+		A6DE0EE1BCC46F89FFB166DDF7956190 /* SlidingTableViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CE9B66019AC3122C611709D1BF2C8 /* SlidingTableViewControllerCell.swift */; };
+		AC1E3F5E97EEC657447D0D1F5EBED9A2 /* SlidingTableViewControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F6AAA302C599CA069A934E1FCF224F1 /* SlidingTableViewControllerCell.xib */; };
+		AD8B315E59644DEB6128B0E6984E20B7 /* DrawerViewOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E7E91957281024C7AD0356C35989DA /* DrawerViewOption.swift */; };
+		AFB784694BB23CE7855C8C5D0C0A65FF /* SlidingTableViewControllerCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 782C5D838620FD55087C11BCF562D899 /* SlidingTableViewControllerCell.xib */; };
+		B60581E7402CF5BCA75B19351B7C61FB /* EVSlidingTableViewCell-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D42928C57512CA258D0ACFAE767BAC71 /* EVSlidingTableViewCell-dummy.m */; };
+		C43342F12087E11D0DF4F5BB3D5EDA6F /* ContactItem.xib in Sources */ = {isa = PBXBuildFile; fileRef = C8614A5089290D6C4691534EF1FA6863 /* ContactItem.xib */; };
+		C55AC6A5E53B5477D94B458C39BB6E6F /* EVSlidingTableViewCell.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D4A011A85B9DCF06FF4CBC5BFCB1EF79 /* EVSlidingTableViewCell.bundle */; };
+		CFAEA5CC8E8837FFC3A55B7425B70D1A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		EE33FB7258215924AF132838353E77AD /* EVConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2242842D6A548056CA7F935AF51A40 /* EVConstants.swift */; };
+		F156ECFB8C98D4AAC1EED1BA1578114D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		F3BEF9640FA246A2E644A028BDE6A442 /* ContactItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E12B1E0BCC505B99DDCB6FF16E45C002 /* ContactItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		8FFA852B566C0F2B08CAA060E42DAD2F /* PBXContainerItemProxy */ = {
+		6368287F6C48E1C8A2E50A054FA2AB27 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = BB953C19676165CD6818225260FCCC39;
-			remoteInfo = EVSlidingTableViewCell;
-		};
-		C1792D60CA9DA00617982CD9B2E30011 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CA4E279505D3A7AE1ED009909B074495;
+			remoteGlobalIDString = 2ACE480DFFBCFBCE8BA269D6B88E9DDB;
 			remoteInfo = "EVSlidingTableViewCell-EVSlidingTableViewCell";
+		};
+		9F6DDCFACF194F83C8983AA15D51BACC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C8D19EBF8AAE7A77BEA456807A9C0EE;
+			remoteInfo = EVSlidingTableViewCell;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08C260CA05064D0132EFF3FA41AEEE07 /* Pods_EVSlidingTableViewCell_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVSlidingTableViewCell_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0587CC98D72E7C4C060FE3DCDEE7CFD7 /* ResourceBundle-EVSlidingTableViewCell-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-EVSlidingTableViewCell-Info.plist"; sourceTree = "<group>"; };
+		08C260CA05064D0132EFF3FA41AEEE07 /* Pods_EVSlidingTableViewCell_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EVSlidingTableViewCell_Tests.framework; path = "Pods-EVSlidingTableViewCell_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0922BC32BF2497A1963008B3A98B8223 /* Pods-EVSlidingTableViewCell_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EVSlidingTableViewCell_Example-dummy.m"; sourceTree = "<group>"; };
 		0A97C7AAA203650E1FC6CE5926F2458A /* Pods-EVSlidingTableViewCell_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVSlidingTableViewCell_Example-resources.sh"; sourceTree = "<group>"; };
+		0C5E0B25C31AD90FEF044C64D65502E6 /* EVOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVOverlay.swift; sourceTree = "<group>"; };
 		13C081C251E157FBE1AB154A753EF489 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18E444C948F47B60FC35C76DE3C21FBC /* Pods-EVSlidingTableViewCell_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVSlidingTableViewCell_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		1E87870D90666D2CB2A6173A76F416C3 /* Pods-EVSlidingTableViewCell_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EVSlidingTableViewCell_Tests.modulemap"; sourceTree = "<group>"; };
+		1E87870D90666D2CB2A6173A76F416C3 /* Pods-EVSlidingTableViewCell_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-EVSlidingTableViewCell_Tests.modulemap"; sourceTree = "<group>"; };
+		2510FA9A4980B48EAECD9E12BDC4F792 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26572091BF87B08FFFE6DD413CFFF5A4 /* Pods-EVSlidingTableViewCell_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EVSlidingTableViewCell_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		27E7E91957281024C7AD0356C35989DA /* DrawerViewOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrawerViewOption.swift; sourceTree = "<group>"; };
 		27ED834B8CFE37500B912A37D05E78FE /* Pods-EVSlidingTableViewCell_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EVSlidingTableViewCell_Example-umbrella.h"; sourceTree = "<group>"; };
 		29F583C467C9AE142037EA4FAA77BFDC /* Pods-EVSlidingTableViewCell_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EVSlidingTableViewCell_Tests-umbrella.h"; sourceTree = "<group>"; };
 		3D456DF0A34A5BA14B2059C386929D37 /* Pods-EVSlidingTableViewCell_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVSlidingTableViewCell_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3D9B508B0D415BE37785993F29CA0167 /* Pods-EVSlidingTableViewCell_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EVSlidingTableViewCell_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		46E951704C80E18CB026F4707722F35A /* EVOverlayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVOverlayView.swift; sourceTree = "<group>"; };
-		534FA8213E95AEF4601CAB127EC94428 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55C02F72C5AF06089E1CAC2CE20D56D7 /* SlidingTableViewControllerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SlidingTableViewControllerCell.swift; sourceTree = "<group>"; };
 		57848BBECCF9AD1E141874522F26F071 /* Pods-EVSlidingTableViewCell_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVSlidingTableViewCell_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		5A6A04D0A7830AD8A6D95FF230050967 /* EVSlidingTableViewCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EVSlidingTableViewCell-dummy.m"; sourceTree = "<group>"; };
 		5ACED8676218BD111189A678E5A1205E /* Pods-EVSlidingTableViewCell_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVSlidingTableViewCell_Tests-resources.sh"; sourceTree = "<group>"; };
-		62B23A7305F111B88794F8F2302DF850 /* UIViewLoading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewLoading.swift; sourceTree = "<group>"; };
-		67BF3F03A88DC9E3DEA4ECEE93045D08 /* ResourceBundle-EVSlidingTableViewCell-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-EVSlidingTableViewCell-Info.plist"; sourceTree = "<group>"; };
-		694F58E42ED312C32C39D2889C9EACD3 /* EVSlidingTableViewCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EVSlidingTableViewCell.xcconfig; sourceTree = "<group>"; };
-		6CEC99458E8AABE58DDDD957EDED079B /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
-		700E750A125473F8067540BD85DD35A9 /* EVSlidingTableViewCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVSlidingTableViewCell-umbrella.h"; sourceTree = "<group>"; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		744B33CA73A1227146A2EF5F814627ED /* Pods-EVSlidingTableViewCell_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EVSlidingTableViewCell_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		782C5D838620FD55087C11BCF562D899 /* SlidingTableViewControllerCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = SlidingTableViewControllerCell.xib; path = en.lproj/SlidingTableViewControllerCell.xib; sourceTree = "<group>"; };
 		79290DD3DA77E3F75233366C7B67012D /* Pods-EVSlidingTableViewCell_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVSlidingTableViewCell_Example.release.xcconfig"; sourceTree = "<group>"; };
-		7CC188759276A0C351A698A76A2C8144 /* DrawerViewOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrawerViewOption.swift; sourceTree = "<group>"; };
-		805AD2E735E376D2E5CFDEDD9DB216A6 /* EVSlidingTableViewCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EVSlidingTableViewCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		87A9703880EFC4923569725408953C3E /* SlidingTableViewControllerCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = SlidingTableViewControllerCell.xib; path = en.lproj/SlidingTableViewControllerCell.xib; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		96C418846C022CB82B6820DBBD9055EC /* Pods-EVSlidingTableViewCell_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EVSlidingTableViewCell_Example.modulemap"; sourceTree = "<group>"; };
-		98527F522529498B7BE0DAA6F6581B76 /* EVSlidingTableViewCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EVSlidingTableViewCell.modulemap; sourceTree = "<group>"; };
-		A5B47604A4E5099A4F74A874F99C4337 /* ContactItem.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ContactItem.xib; sourceTree = "<group>"; };
-		AAE0CB60C4BCE5C6EE517AB6AFD7E777 /* EVOverlay.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVOverlay.swift; sourceTree = "<group>"; };
-		AB3EECDC19D931394C811B1317DABAA5 /* ContactItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
+		7D5CE9B66019AC3122C611709D1BF2C8 /* SlidingTableViewControllerCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SlidingTableViewControllerCell.swift; sourceTree = "<group>"; };
+		805AD2E735E376D2E5CFDEDD9DB216A6 /* EVSlidingTableViewCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EVSlidingTableViewCell.framework; path = EVSlidingTableViewCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96C418846C022CB82B6820DBBD9055EC /* Pods-EVSlidingTableViewCell_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-EVSlidingTableViewCell_Example.modulemap"; sourceTree = "<group>"; };
+		991C7436332BD4B4E1D7841C9DC0DD83 /* EVSlidingTableViewCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EVSlidingTableViewCell.xcconfig; sourceTree = "<group>"; };
+		9F06807AEA49DF088ACB566F4ED25388 /* EVOverlayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVOverlayView.swift; sourceTree = "<group>"; };
+		ABC2C97A21773E205A3EE3F58498039B /* SlidingTableViewControllerCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = SlidingTableViewControllerCell.xib; sourceTree = "<group>"; };
+		AFB8FC00AF6FA9500A7711D0F8C3761D /* EVSlidingTableViewCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVSlidingTableViewCell-prefix.pch"; sourceTree = "<group>"; };
+		B93E4DBDDFF5EE1864AEA5F3E16A96F2 /* EVSlidingTableViewCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = EVSlidingTableViewCell.modulemap; sourceTree = "<group>"; };
 		BBB3B6D799A695A51CA92A3DB4795F4C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BDAC2F39148915FFB7086BE26332769A /* Pods-EVSlidingTableViewCell_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-EVSlidingTableViewCell_Tests-dummy.m"; sourceTree = "<group>"; };
-		C06856C22F6755540EB6FA730C9248EE /* SlidingTableViewControllerCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = SlidingTableViewControllerCell.xib; sourceTree = "<group>"; };
+		BF345A4CA659A3F0DFCE267F98DCF40D /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		C2637F7CE530BC7D7C3491492850B88F /* Pods-EVSlidingTableViewCell_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVSlidingTableViewCell_Example-frameworks.sh"; sourceTree = "<group>"; };
-		CA9140FECE16D9EBD54803B7739597EA /* Pods_EVSlidingTableViewCell_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EVSlidingTableViewCell_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D4A011A85B9DCF06FF4CBC5BFCB1EF79 /* EVSlidingTableViewCell.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EVSlidingTableViewCell.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		D68D955689922631D67FBDF93233EF47 /* EVConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVConstants.swift; sourceTree = "<group>"; };
-		E6EC9C9CFDC323282355840DF5E4B84D /* EVSlidingTableViewCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVSlidingTableViewCell-prefix.pch"; sourceTree = "<group>"; };
+		C8614A5089290D6C4691534EF1FA6863 /* ContactItem.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = ContactItem.xib; sourceTree = "<group>"; };
+		CA9140FECE16D9EBD54803B7739597EA /* Pods_EVSlidingTableViewCell_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_EVSlidingTableViewCell_Example.framework; path = "Pods-EVSlidingTableViewCell_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D25E0CC3E19E8D88243E43C543286DA4 /* EVSlidingTableViewCell-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVSlidingTableViewCell-umbrella.h"; sourceTree = "<group>"; };
+		D42928C57512CA258D0ACFAE767BAC71 /* EVSlidingTableViewCell-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "EVSlidingTableViewCell-dummy.m"; sourceTree = "<group>"; };
+		D4A011A85B9DCF06FF4CBC5BFCB1EF79 /* EVSlidingTableViewCell.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = EVSlidingTableViewCell.bundle; path = EVSlidingTableViewCell.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		D72FB3B3333818BD9331385CA3C8EE5A /* UIViewLoading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewLoading.swift; sourceTree = "<group>"; };
+		E12B1E0BCC505B99DDCB6FF16E45C002 /* ContactItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ContactItem.swift; sourceTree = "<group>"; };
 		F52C6D81F04C4A605ABCE2E0163B538D /* Pods-EVSlidingTableViewCell_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVSlidingTableViewCell_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FCAF95303FFAFA5EA0F84DCF6CBDE756 /* Pods-EVSlidingTableViewCell_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-EVSlidingTableViewCell_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		FF2242842D6A548056CA7F935AF51A40 /* EVConstants.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = EVConstants.swift; path = EVSlidingTableViewCell/Classes/EVConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		12082A170ED811245569B3BEAB274CB6 /* Frameworks */ = {
+		02958F1B20871D71F1E78FC4C598A97C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7258A6D02FF0B400470959A6C2325458 /* Foundation.framework in Frameworks */,
+				CFAEA5CC8E8837FFC3A55B7425B70D1A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BD91B848AB0BC6CD25FDF627D8D4F59F /* Frameworks */ = {
+		71C07A50B4CDA7C12D90B0F0817A0ED3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C20D841E75A0A84105D56814A3FB808 /* Foundation.framework in Frameworks */,
+				1DE16B7F488E15FB557BCE58E0F55ECC /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CFA13912EEC78CAB5973997ACFB70B2D /* Frameworks */ = {
+		8C56841ACD858FF2F69A433B79E4877B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				89F2BCB38FCE5DAFD4AED0902732454B /* Foundation.framework in Frameworks */,
+				F156ECFB8C98D4AAC1EED1BA1578114D /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAF0E62CE7130FD56D34705C2973ABD5 /* Frameworks */ = {
+		E91136594B68B1A203D904DA113C417C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -150,11 +150,26 @@
 			path = "Target Support Files/Pods-EVSlidingTableViewCell_Example";
 			sourceTree = "<group>";
 		};
-		0CC1A8166984230895A05B070A3E937F /* ContactItem */ = {
+		0E6DFF4020F6798E0A9648B0278A2CA1 /* DrawerCell */ = {
 			isa = PBXGroup;
 			children = (
+				27E7E91957281024C7AD0356C35989DA /* DrawerViewOption.swift */,
+				7D5CE9B66019AC3122C611709D1BF2C8 /* SlidingTableViewControllerCell.swift */,
+				4F6AAA302C599CA069A934E1FCF224F1 /* SlidingTableViewControllerCell.xib */,
+				ABC2C97A21773E205A3EE3F58498039B /* SlidingTableViewControllerCell.xib */,
 			);
-			path = ContactItem;
+			name = DrawerCell;
+			path = EVSlidingTableViewCell/Classes/DrawerCell;
+			sourceTree = "<group>";
+		};
+		17E8E1613DC6D69FF4EE9214BA719C16 /* OverlayView */ = {
+			isa = PBXGroup;
+			children = (
+				0C5E0B25C31AD90FEF044C64D65502E6 /* EVOverlay.swift */,
+				9F06807AEA49DF088ACB566F4ED25388 /* EVOverlayView.swift */,
+			);
+			name = OverlayView;
+			path = EVSlidingTableViewCell/Classes/OverlayView;
 			sourceTree = "<group>";
 		};
 		1F91405BAFD4EAF0D9516DA42AE91FB2 /* Products */ = {
@@ -168,146 +183,77 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		25B6D48165C66B6F06469FAA2BB71065 /* Resources */ = {
+		725B60298B71967E16F86DD0E911947C /* EVSlidingTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				44B5330CFC8EC5B7B00153A631F3972A /* EVSlidingTableViewCell */,
+				FF2242842D6A548056CA7F935AF51A40 /* EVConstants.swift */,
+				F6F6ECC9AAD4B231FBA1CE68D15CBEA6 /* ContactItem */,
+				0E6DFF4020F6798E0A9648B0278A2CA1 /* DrawerCell */,
+				DE081561C184FAD7FD4544735D373343 /* Extensions */,
+				17E8E1613DC6D69FF4EE9214BA719C16 /* OverlayView */,
+				EF8BEDB33CEDAD208A7D1B2A00A7F540 /* Resources */,
+				75AC3EB290F2F111CDDEE213C30B9F26 /* Support Files */,
 			);
-			name = Resources;
+			name = EVSlidingTableViewCell;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		3641FA8436E96CCF516E7B53B0A16D36 /* OverlayView */ = {
+		75AC3EB290F2F111CDDEE213C30B9F26 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AAE0CB60C4BCE5C6EE517AB6AFD7E777 /* EVOverlay.swift */,
-				46E951704C80E18CB026F4707722F35A /* EVOverlayView.swift */,
+				B93E4DBDDFF5EE1864AEA5F3E16A96F2 /* EVSlidingTableViewCell.modulemap */,
+				991C7436332BD4B4E1D7841C9DC0DD83 /* EVSlidingTableViewCell.xcconfig */,
+				D42928C57512CA258D0ACFAE767BAC71 /* EVSlidingTableViewCell-dummy.m */,
+				AFB8FC00AF6FA9500A7711D0F8C3761D /* EVSlidingTableViewCell-prefix.pch */,
+				D25E0CC3E19E8D88243E43C543286DA4 /* EVSlidingTableViewCell-umbrella.h */,
+				2510FA9A4980B48EAECD9E12BDC4F792 /* Info.plist */,
+				0587CC98D72E7C4C060FE3DCDEE7CFD7 /* ResourceBundle-EVSlidingTableViewCell-Info.plist */,
 			);
-			path = OverlayView;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/EVSlidingTableViewCell";
 			sourceTree = "<group>";
 		};
-		3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				CEC22C73C1608DFA5D5D78BDCB218219 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		44B5330CFC8EC5B7B00153A631F3972A /* EVSlidingTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				4E6A2A51937C2C1D477BE51A0F56A965 /* Classes */,
-			);
-			path = EVSlidingTableViewCell;
-			sourceTree = "<group>";
-		};
-		4E6A2A51937C2C1D477BE51A0F56A965 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				0CC1A8166984230895A05B070A3E937F /* ContactItem */,
-				6ECB3043088DF4AD420CDBDEB1CB0164 /* DrawerCell */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		6ECB3043088DF4AD420CDBDEB1CB0164 /* DrawerCell */ = {
+		761A101C8F90ECA316603EDCC2003DA4 /* ContactItem */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = DrawerCell;
+			name = ContactItem;
+			path = EVSlidingTableViewCell/Classes/ContactItem;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				D3583EA5192FB6105EC6DD8A74C0091E /* Development Pods */,
+				B856C33AA558B8AF611EA90EB4E223E3 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				1F91405BAFD4EAF0D9516DA42AE91FB2 /* Products */,
 				D6CCF774FA06E5B76B36C038F158BD95 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		820ECD6ADA09C3C2D96BB83720A7D1DD /* Support Files */ = {
+		B856C33AA558B8AF611EA90EB4E223E3 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				98527F522529498B7BE0DAA6F6581B76 /* EVSlidingTableViewCell.modulemap */,
-				694F58E42ED312C32C39D2889C9EACD3 /* EVSlidingTableViewCell.xcconfig */,
-				5A6A04D0A7830AD8A6D95FF230050967 /* EVSlidingTableViewCell-dummy.m */,
-				E6EC9C9CFDC323282355840DF5E4B84D /* EVSlidingTableViewCell-prefix.pch */,
-				700E750A125473F8067540BD85DD35A9 /* EVSlidingTableViewCell-umbrella.h */,
-				534FA8213E95AEF4601CAB127EC94428 /* Info.plist */,
-				67BF3F03A88DC9E3DEA4ECEE93045D08 /* ResourceBundle-EVSlidingTableViewCell-Info.plist */,
+				725B60298B71967E16F86DD0E911947C /* EVSlidingTableViewCell */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/EVSlidingTableViewCell";
-			sourceTree = "<group>";
-		};
-		8DCCB8550BB2C0A79354C0A953842599 /* EVSlidingTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				90072915FC4313BE28A54A55128F7BFC /* Classes */,
-			);
-			path = EVSlidingTableViewCell;
-			sourceTree = "<group>";
-		};
-		90072915FC4313BE28A54A55128F7BFC /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				D68D955689922631D67FBDF93233EF47 /* EVConstants.swift */,
-				F5050DFE958158BEEDF4637A112E4237 /* ContactItem */,
-				B4B869BB1587D54B6B8139A65DC4D77B /* DrawerCell */,
-				B91EA818DCA45C1ABCC3F5AECE73F548 /* Extensions */,
-				3641FA8436E96CCF516E7B53B0A16D36 /* OverlayView */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		9BFE86819655A52CA38E01DF028E7CC0 /* EVSlidingTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				8DCCB8550BB2C0A79354C0A953842599 /* EVSlidingTableViewCell */,
-				25B6D48165C66B6F06469FAA2BB71065 /* Resources */,
-				820ECD6ADA09C3C2D96BB83720A7D1DD /* Support Files */,
-			);
-			name = EVSlidingTableViewCell;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		B4B869BB1587D54B6B8139A65DC4D77B /* DrawerCell */ = {
-			isa = PBXGroup;
-			children = (
-				7CC188759276A0C351A698A76A2C8144 /* DrawerViewOption.swift */,
-				55C02F72C5AF06089E1CAC2CE20D56D7 /* SlidingTableViewControllerCell.swift */,
-				3FF198EB72DBE844B878C097F377E80B /* SlidingTableViewControllerCell.xib */,
-				C06856C22F6755540EB6FA730C9248EE /* SlidingTableViewControllerCell.xib */,
-			);
-			path = DrawerCell;
-			sourceTree = "<group>";
-		};
-		B91EA818DCA45C1ABCC3F5AECE73F548 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				6CEC99458E8AABE58DDDD957EDED079B /* UITableViewCellExtension.swift */,
-				62B23A7305F111B88794F8F2302DF850 /* UIViewLoading.swift */,
-			);
-			path = Extensions;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				3DCAB2B7CDE207B3958B6CB957FCC758 /* iOS */,
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D3583EA5192FB6105EC6DD8A74C0091E /* Development Pods */ = {
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				9BFE86819655A52CA38E01DF028E7CC0 /* EVSlidingTableViewCell */,
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
 			);
-			name = "Development Pods";
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		D6CCF774FA06E5B76B36C038F158BD95 /* Targets Support Files */ = {
@@ -319,13 +265,41 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F5050DFE958158BEEDF4637A112E4237 /* ContactItem */ = {
+		DE081561C184FAD7FD4544735D373343 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				AB3EECDC19D931394C811B1317DABAA5 /* ContactItem.swift */,
-				A5B47604A4E5099A4F74A874F99C4337 /* ContactItem.xib */,
+				BF345A4CA659A3F0DFCE267F98DCF40D /* UITableViewCellExtension.swift */,
+				D72FB3B3333818BD9331385CA3C8EE5A /* UIViewLoading.swift */,
 			);
-			path = ContactItem;
+			name = Extensions;
+			path = EVSlidingTableViewCell/Classes/Extensions;
+			sourceTree = "<group>";
+		};
+		EF8BEDB33CEDAD208A7D1B2A00A7F540 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				761A101C8F90ECA316603EDCC2003DA4 /* ContactItem */,
+				F00006F1E119C77E309C83026F5CE35C /* DrawerCell */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F00006F1E119C77E309C83026F5CE35C /* DrawerCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DrawerCell;
+			path = EVSlidingTableViewCell/Classes/DrawerCell;
+			sourceTree = "<group>";
+		};
+		F6F6ECC9AAD4B231FBA1CE68D15CBEA6 /* ContactItem */ = {
+			isa = PBXGroup;
+			children = (
+				E12B1E0BCC505B99DDCB6FF16E45C002 /* ContactItem.swift */,
+				C8614A5089290D6C4691534EF1FA6863 /* ContactItem.xib */,
+			);
+			name = ContactItem;
+			path = EVSlidingTableViewCell/Classes/ContactItem;
 			sourceTree = "<group>";
 		};
 		FACC2EE9BF161BDB68A7FA4DB6642E64 /* Pods-EVSlidingTableViewCell_Tests */ = {
@@ -349,77 +323,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3019D078134FB4D135DEB21D40E08B20 /* Headers */ = {
+		25ABAFB8A968223DBCD8666F6ED27940 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26CE88486245CE21764DABC9C70099DB /* EVSlidingTableViewCell-umbrella.h in Headers */,
+				2C47E01FF3FF89D9E3FE62E850714CC9 /* EVSlidingTableViewCell-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		65B998B36E76ECF76E7916A43B58EBF3 /* Headers */ = {
+		C6F78942434EA46276152DE024B30C12 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D341352780B3B336521A9522691B82F6 /* Pods-EVSlidingTableViewCell_Tests-umbrella.h in Headers */,
+				7E195FBF9367260E6900814DF327F570 /* Pods-EVSlidingTableViewCell_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D4F37171665F5EF3A91C06493084E21D /* Headers */ = {
+		DD341D11C7FC38B813DB8882805251F4 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				572C27588A20ED0B9FD5E827422EE5C4 /* Pods-EVSlidingTableViewCell_Example-umbrella.h in Headers */,
+				80147BF6E44215FCBAE5DFBA09FBB4A3 /* Pods-EVSlidingTableViewCell_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		32570DA76C3CEDB7EA968C2D3E94D7CF /* Pods-EVSlidingTableViewCell_Example */ = {
+		2ACE480DFFBCFBCE8BA269D6B88E9DDB /* EVSlidingTableViewCell-EVSlidingTableViewCell */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F06E211045E2E6F880200E0D2BCA3132 /* Build configuration list for PBXNativeTarget "Pods-EVSlidingTableViewCell_Example" */;
+			buildConfigurationList = 991ADE306D93F7685E1447788991BDF8 /* Build configuration list for PBXNativeTarget "EVSlidingTableViewCell-EVSlidingTableViewCell" */;
 			buildPhases = (
-				5A92FD5D52D30C82008E2F8D2BDB09DB /* Sources */,
-				12082A170ED811245569B3BEAB274CB6 /* Frameworks */,
-				D4F37171665F5EF3A91C06493084E21D /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				87093C8E1BB281B9AFE0D6A7BCAD9AC7 /* PBXTargetDependency */,
-			);
-			name = "Pods-EVSlidingTableViewCell_Example";
-			productName = "Pods-EVSlidingTableViewCell_Example";
-			productReference = CA9140FECE16D9EBD54803B7739597EA /* Pods_EVSlidingTableViewCell_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		BB953C19676165CD6818225260FCCC39 /* EVSlidingTableViewCell */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3149B969F1A8641988D71C5EDE658AEF /* Build configuration list for PBXNativeTarget "EVSlidingTableViewCell" */;
-			buildPhases = (
-				508A12E8549893BCFEC0CB62BECE096D /* Sources */,
-				CFA13912EEC78CAB5973997ACFB70B2D /* Frameworks */,
-				4C8A2ED47FEBC56EEE6045476ACF5F0E /* Resources */,
-				3019D078134FB4D135DEB21D40E08B20 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				827D540CF4CF2756B74D428D21521B71 /* PBXTargetDependency */,
-			);
-			name = EVSlidingTableViewCell;
-			productName = EVSlidingTableViewCell;
-			productReference = 805AD2E735E376D2E5CFDEDD9DB216A6 /* EVSlidingTableViewCell.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		CA4E279505D3A7AE1ED009909B074495 /* EVSlidingTableViewCell-EVSlidingTableViewCell */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B7AEBC6D6D71A4E5E2B8A00C66449897 /* Build configuration list for PBXNativeTarget "EVSlidingTableViewCell-EVSlidingTableViewCell" */;
-			buildPhases = (
-				E0C9E2678E15EBF9E0239EFDF0F933B5 /* Sources */,
-				FAF0E62CE7130FD56D34705C2973ABD5 /* Frameworks */,
-				51D507B3C836B8E136668472B8D26010 /* Resources */,
+				56EDB8E579785A1AA005AC1540321296 /* Sources */,
+				E91136594B68B1A203D904DA113C417C /* Frameworks */,
+				2DEABB198DCAF3AB90D78B54F3FFA27E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -430,13 +367,50 @@
 			productReference = D4A011A85B9DCF06FF4CBC5BFCB1EF79 /* EVSlidingTableViewCell.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
-		F2A3B33173DDDAA52E18AAD64E8C7D06 /* Pods-EVSlidingTableViewCell_Tests */ = {
+		2C8D19EBF8AAE7A77BEA456807A9C0EE /* EVSlidingTableViewCell */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3426124AAF3586EECB0056E4AFA46AFE /* Build configuration list for PBXNativeTarget "Pods-EVSlidingTableViewCell_Tests" */;
+			buildConfigurationList = AA4A2843CEE84CD404CB2CBE7D60B482 /* Build configuration list for PBXNativeTarget "EVSlidingTableViewCell" */;
 			buildPhases = (
-				5DEAA2B33B86B2C1E187EA178DCCC646 /* Sources */,
-				BD91B848AB0BC6CD25FDF627D8D4F59F /* Frameworks */,
-				65B998B36E76ECF76E7916A43B58EBF3 /* Headers */,
+				3D6E87F2A397A300E1C13D8CF67D3C4D /* Sources */,
+				8C56841ACD858FF2F69A433B79E4877B /* Frameworks */,
+				DC315EB9E702BF92D27A1E61834DF80F /* Resources */,
+				25ABAFB8A968223DBCD8666F6ED27940 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD49F89626D870427E4716AED1A54E72 /* PBXTargetDependency */,
+			);
+			name = EVSlidingTableViewCell;
+			productName = EVSlidingTableViewCell;
+			productReference = 805AD2E735E376D2E5CFDEDD9DB216A6 /* EVSlidingTableViewCell.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7EBBD27B646BC5EB0485FC280F4DC148 /* Pods-EVSlidingTableViewCell_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BB2BCC1B5D163EBEE5E6A682D4CF3D7C /* Build configuration list for PBXNativeTarget "Pods-EVSlidingTableViewCell_Example" */;
+			buildPhases = (
+				765CBB7EC92E255DBA022FE84348C23B /* Sources */,
+				71C07A50B4CDA7C12D90B0F0817A0ED3 /* Frameworks */,
+				DD341D11C7FC38B813DB8882805251F4 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8CC956DF46D6EFB80AC523824624695 /* PBXTargetDependency */,
+			);
+			name = "Pods-EVSlidingTableViewCell_Example";
+			productName = "Pods-EVSlidingTableViewCell_Example";
+			productReference = CA9140FECE16D9EBD54803B7739597EA /* Pods_EVSlidingTableViewCell_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		88FDFA2A286E7254A1CD6B871FBEC112 /* Pods-EVSlidingTableViewCell_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDC28C36DE5F1B5E5D278D67C3707EE5 /* Build configuration list for PBXNativeTarget "Pods-EVSlidingTableViewCell_Tests" */;
+			buildPhases = (
+				93DD9079BAEC51C94E241B074FD58987 /* Sources */,
+				02958F1B20871D71F1E78FC4C598A97C /* Frameworks */,
+				C6F78942434EA46276152DE024B30C12 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -453,21 +427,8 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0820;
-				TargetAttributes = {
-					32570DA76C3CEDB7EA968C2D3E94D7CF = {
-						DevelopmentTeam = 62LB893NNW;
-						LastSwiftMigration = 0800;
-					};
-					BB953C19676165CD6818225260FCCC39 = {
-						DevelopmentTeam = 62LB893NNW;
-						LastSwiftMigration = 0800;
-					};
-					F2A3B33173DDDAA52E18AAD64E8C7D06 = {
-						DevelopmentTeam = 62LB893NNW;
-					};
-				};
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -481,100 +442,100 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BB953C19676165CD6818225260FCCC39 /* EVSlidingTableViewCell */,
-				CA4E279505D3A7AE1ED009909B074495 /* EVSlidingTableViewCell-EVSlidingTableViewCell */,
-				32570DA76C3CEDB7EA968C2D3E94D7CF /* Pods-EVSlidingTableViewCell_Example */,
-				F2A3B33173DDDAA52E18AAD64E8C7D06 /* Pods-EVSlidingTableViewCell_Tests */,
+				2C8D19EBF8AAE7A77BEA456807A9C0EE /* EVSlidingTableViewCell */,
+				2ACE480DFFBCFBCE8BA269D6B88E9DDB /* EVSlidingTableViewCell-EVSlidingTableViewCell */,
+				7EBBD27B646BC5EB0485FC280F4DC148 /* Pods-EVSlidingTableViewCell_Example */,
+				88FDFA2A286E7254A1CD6B871FBEC112 /* Pods-EVSlidingTableViewCell_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4C8A2ED47FEBC56EEE6045476ACF5F0E /* Resources */ = {
+		2DEABB198DCAF3AB90D78B54F3FFA27E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE181B983AE85DBEB48C75E7577B56E3 /* EVSlidingTableViewCell.bundle in Resources */,
+				7540AB4745F2CCD0C9CCCE233D2BD11B /* ContactItem.xib in Resources */,
+				AC1E3F5E97EEC657447D0D1F5EBED9A2 /* SlidingTableViewControllerCell.xib in Resources */,
+				6F430D268B7EBFD5BDBF0EA75B906E72 /* SlidingTableViewControllerCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		51D507B3C836B8E136668472B8D26010 /* Resources */ = {
+		DC315EB9E702BF92D27A1E61834DF80F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A279DF2091AB67A56B7C432FE6A27E9B /* ContactItem.xib in Resources */,
-				01B74F39E34CA2A0A0AFE5693F323624 /* SlidingTableViewControllerCell.xib in Resources */,
-				3AFD362B3380C49A2F863EF4C8B91327 /* SlidingTableViewControllerCell.xib in Resources */,
+				C55AC6A5E53B5477D94B458C39BB6E6F /* EVSlidingTableViewCell.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		508A12E8549893BCFEC0CB62BECE096D /* Sources */ = {
+		3D6E87F2A397A300E1C13D8CF67D3C4D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF3637BA6DBB9843612C893051E53F75 /* ContactItem.swift in Sources */,
-				ABEE76E0A2C52591DACFC72CA7D15AD0 /* ContactItem.xib in Sources */,
-				61C258F5324E24BF7A91DD531DA90820 /* DrawerViewOption.swift in Sources */,
-				FEF82AF87ECD3B3FD1151FA05650541B /* EVConstants.swift in Sources */,
-				5B650D97621F21F22ED89E393A105BF6 /* EVOverlay.swift in Sources */,
-				5EE1B9F2830624684F86FB5F208CE7A3 /* EVOverlayView.swift in Sources */,
-				9EDEA7F59FA160F383E794B9209B8C2C /* EVSlidingTableViewCell-dummy.m in Sources */,
-				47D67E8B7A9F52CA16863B420A15B223 /* SlidingTableViewControllerCell.swift in Sources */,
-				08567C37F28A911CA81400788B236B25 /* SlidingTableViewControllerCell.xib in Sources */,
-				85F4BA8F59620AEBBBDF7032621C6A7E /* SlidingTableViewControllerCell.xib in Sources */,
-				4E792CB795B62A8175A018EABA4B8B2B /* UITableViewCellExtension.swift in Sources */,
-				A620FC93FE7DB9D5B5DDCA7041E4D213 /* UIViewLoading.swift in Sources */,
+				F3BEF9640FA246A2E644A028BDE6A442 /* ContactItem.swift in Sources */,
+				C43342F12087E11D0DF4F5BB3D5EDA6F /* ContactItem.xib in Sources */,
+				AD8B315E59644DEB6128B0E6984E20B7 /* DrawerViewOption.swift in Sources */,
+				EE33FB7258215924AF132838353E77AD /* EVConstants.swift in Sources */,
+				9AF35F30FCA1A4F824DE1C003037E43E /* EVOverlay.swift in Sources */,
+				422583C7D4F71E3AACD66C36727FFAAD /* EVOverlayView.swift in Sources */,
+				B60581E7402CF5BCA75B19351B7C61FB /* EVSlidingTableViewCell-dummy.m in Sources */,
+				A6DE0EE1BCC46F89FFB166DDF7956190 /* SlidingTableViewControllerCell.swift in Sources */,
+				AFB784694BB23CE7855C8C5D0C0A65FF /* SlidingTableViewControllerCell.xib in Sources */,
+				81F054FF7EEB1EBDF1A399D2E2DBE18D /* SlidingTableViewControllerCell.xib in Sources */,
+				83686370E6C4590D16899A61CBCF7636 /* UITableViewCellExtension.swift in Sources */,
+				971D67D245574CB6E07810DF77A2E4C4 /* UIViewLoading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5A92FD5D52D30C82008E2F8D2BDB09DB /* Sources */ = {
+		56EDB8E579785A1AA005AC1540321296 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5E077156346F239CB3A09AF786320EF /* Pods-EVSlidingTableViewCell_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5DEAA2B33B86B2C1E187EA178DCCC646 /* Sources */ = {
+		765CBB7EC92E255DBA022FE84348C23B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7355860A9834BAEB341AE0EC742BB8A /* Pods-EVSlidingTableViewCell_Tests-dummy.m in Sources */,
+				6DD8D0100480DBFBC19D1F22EA39AA9F /* Pods-EVSlidingTableViewCell_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E0C9E2678E15EBF9E0239EFDF0F933B5 /* Sources */ = {
+		93DD9079BAEC51C94E241B074FD58987 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				816CCB9F376CE4B89138B857CE5F4AAB /* Pods-EVSlidingTableViewCell_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		827D540CF4CF2756B74D428D21521B71 /* PBXTargetDependency */ = {
+		DD49F89626D870427E4716AED1A54E72 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "EVSlidingTableViewCell-EVSlidingTableViewCell";
-			target = CA4E279505D3A7AE1ED009909B074495 /* EVSlidingTableViewCell-EVSlidingTableViewCell */;
-			targetProxy = C1792D60CA9DA00617982CD9B2E30011 /* PBXContainerItemProxy */;
+			target = 2ACE480DFFBCFBCE8BA269D6B88E9DDB /* EVSlidingTableViewCell-EVSlidingTableViewCell */;
+			targetProxy = 6368287F6C48E1C8A2E50A054FA2AB27 /* PBXContainerItemProxy */;
 		};
-		87093C8E1BB281B9AFE0D6A7BCAD9AC7 /* PBXTargetDependency */ = {
+		F8CC956DF46D6EFB80AC523824624695 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = EVSlidingTableViewCell;
-			target = BB953C19676165CD6818225260FCCC39 /* EVSlidingTableViewCell */;
-			targetProxy = 8FFA852B566C0F2B08CAA060E42DAD2F /* PBXContainerItemProxy */;
+			target = 2C8D19EBF8AAE7A77BEA456807A9C0EE /* EVSlidingTableViewCell */;
+			targetProxy = 9F6DDCFACF194F83C8983AA15D51BACC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3FF198EB72DBE844B878C097F377E80B /* SlidingTableViewControllerCell.xib */ = {
+		4F6AAA302C599CA069A934E1FCF224F1 /* SlidingTableViewControllerCell.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				87A9703880EFC4923569725408953C3E /* SlidingTableViewControllerCell.xib */,
+				782C5D838620FD55087C11BCF562D899 /* SlidingTableViewControllerCell.xib */,
 			);
 			name = SlidingTableViewControllerCell.xib;
 			path = .;
@@ -583,100 +544,25 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1A679E5D6976FB5D2B8649D25A1A5031 /* Debug */ = {
+		070B458F3C454867DDC8DD5A42C8C8F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 18E444C948F47B60FC35C76DE3C21FBC /* Pods-EVSlidingTableViewCell_Example.debug.xcconfig */;
+			baseConfigurationReference = F52C6D81F04C4A605ABCE2E0163B538D /* Pods-EVSlidingTableViewCell_Tests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 62LB893NNW;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-EVSlidingTableViewCell_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EVSlidingTableViewCell_Example/Pods-EVSlidingTableViewCell_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_EVSlidingTableViewCell_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		249AB02CE3B8FC578DE6858C5E0A0442 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 79290DD3DA77E3F75233366C7B67012D /* Pods-EVSlidingTableViewCell_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 62LB893NNW;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-EVSlidingTableViewCell_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-EVSlidingTableViewCell_Example/Pods-EVSlidingTableViewCell_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_EVSlidingTableViewCell_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		2A2167484574534E31B4E62F58981614 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D456DF0A34A5BA14B2059C386929D37 /* Pods-EVSlidingTableViewCell_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 62LB893NNW;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/Pods-EVSlidingTableViewCell_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-EVSlidingTableViewCell_Tests/Pods-EVSlidingTableViewCell_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -688,58 +574,14 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		3FA451D268613890FA8A5A03801E11D5 /* Release */ = {
+		2F3D2FF360D23BB16064043564EE93BE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 991C7436332BD4B4E1D7841C9DC0DD83 /* EVSlidingTableViewCell.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		4D4183F7F1D740377BB6EA18E2BA0608 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 694F58E42ED312C32C39D2889C9EACD3 /* EVSlidingTableViewCell.xcconfig */;
-			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/EVSlidingTableViewCell";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Target Support Files/EVSlidingTableViewCell/ResourceBundle-EVSlidingTableViewCell-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				PRODUCT_NAME = EVSlidingTableViewCell;
@@ -750,30 +592,41 @@
 			};
 			name = Debug;
 		};
-		5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */ = {
+		33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -782,41 +635,210 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		70C6D9C6B5197681FBC2588CAE111229 /* Debug */ = {
+		385D0C3AB48CC048A15345844212C4B7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F52C6D81F04C4A605ABCE2E0163B538D /* Pods-EVSlidingTableViewCell_Tests.debug.xcconfig */;
+			baseConfigurationReference = 991C7436332BD4B4E1D7841C9DC0DD83 /* EVSlidingTableViewCell.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 62LB893NNW;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EVSlidingTableViewCell/EVSlidingTableViewCell-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EVSlidingTableViewCell/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EVSlidingTableViewCell/EVSlidingTableViewCell.modulemap";
+				PRODUCT_NAME = EVSlidingTableViewCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6C94DD3CBC4A46B39C81AD38C692C794 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18E444C948F47B60FC35C76DE3C21FBC /* Pods-EVSlidingTableViewCell_Example.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-EVSlidingTableViewCell_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EVSlidingTableViewCell_Example/Pods-EVSlidingTableViewCell_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_EVSlidingTableViewCell_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		731DC216E1A58545B559F6E0A2418060 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		A64BA6C8DC0812EE23BB7E8637BA1877 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 991C7436332BD4B4E1D7841C9DC0DD83 /* EVSlidingTableViewCell.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/EVSlidingTableViewCell";
+				INFOPLIST_FILE = "Target Support Files/EVSlidingTableViewCell/ResourceBundle-EVSlidingTableViewCell-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				PRODUCT_NAME = EVSlidingTableViewCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		BA65BA269ED4FA5CAE98044A03C22257 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 991C7436332BD4B4E1D7841C9DC0DD83 /* EVSlidingTableViewCell.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/EVSlidingTableViewCell/EVSlidingTableViewCell-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/EVSlidingTableViewCell/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/EVSlidingTableViewCell/EVSlidingTableViewCell.modulemap";
+				PRODUCT_NAME = EVSlidingTableViewCell;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BBDD67F42C3CFAF2D51D529309D9D8F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D456DF0A34A5BA14B2059C386929D37 /* Pods-EVSlidingTableViewCell_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-EVSlidingTableViewCell_Tests/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-EVSlidingTableViewCell_Tests/Pods-EVSlidingTableViewCell_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -825,88 +847,43 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		856FB18F2FABA1F8D5D7D9DF21FF06E3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 694F58E42ED312C32C39D2889C9EACD3 /* EVSlidingTableViewCell.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 62LB893NNW;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/EVSlidingTableViewCell/EVSlidingTableViewCell-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EVSlidingTableViewCell/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EVSlidingTableViewCell/EVSlidingTableViewCell.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = EVSlidingTableViewCell;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		E659CFB4DEBACE526A144A9C67268F8E /* Debug */ = {
+		D78D4F885DFB4C1F11A11CBD7FE3AC51 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 694F58E42ED312C32C39D2889C9EACD3 /* EVSlidingTableViewCell.xcconfig */;
+			baseConfigurationReference = 79290DD3DA77E3F75233366C7B67012D /* Pods-EVSlidingTableViewCell_Example.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 62LB893NNW;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/EVSlidingTableViewCell/EVSlidingTableViewCell-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/EVSlidingTableViewCell/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-EVSlidingTableViewCell_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/EVSlidingTableViewCell/EVSlidingTableViewCell.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = EVSlidingTableViewCell;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-EVSlidingTableViewCell_Example/Pods-EVSlidingTableViewCell_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_EVSlidingTableViewCell_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		FB5481916DD7E0EA2B9837B04D54FBD0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 694F58E42ED312C32C39D2889C9EACD3 /* EVSlidingTableViewCell.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/EVSlidingTableViewCell";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/EVSlidingTableViewCell/ResourceBundle-EVSlidingTableViewCell-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				PRODUCT_NAME = EVSlidingTableViewCell;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -916,44 +893,44 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5E62115DE8C09934BF8D2FE5D15FED1E /* Debug */,
-				3FA451D268613890FA8A5A03801E11D5 /* Release */,
+				33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */,
+				731DC216E1A58545B559F6E0A2418060 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3149B969F1A8641988D71C5EDE658AEF /* Build configuration list for PBXNativeTarget "EVSlidingTableViewCell" */ = {
+		991ADE306D93F7685E1447788991BDF8 /* Build configuration list for PBXNativeTarget "EVSlidingTableViewCell-EVSlidingTableViewCell" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E659CFB4DEBACE526A144A9C67268F8E /* Debug */,
-				856FB18F2FABA1F8D5D7D9DF21FF06E3 /* Release */,
+				2F3D2FF360D23BB16064043564EE93BE /* Debug */,
+				A64BA6C8DC0812EE23BB7E8637BA1877 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3426124AAF3586EECB0056E4AFA46AFE /* Build configuration list for PBXNativeTarget "Pods-EVSlidingTableViewCell_Tests" */ = {
+		AA4A2843CEE84CD404CB2CBE7D60B482 /* Build configuration list for PBXNativeTarget "EVSlidingTableViewCell" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				70C6D9C6B5197681FBC2588CAE111229 /* Debug */,
-				2A2167484574534E31B4E62F58981614 /* Release */,
+				BA65BA269ED4FA5CAE98044A03C22257 /* Debug */,
+				385D0C3AB48CC048A15345844212C4B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B7AEBC6D6D71A4E5E2B8A00C66449897 /* Build configuration list for PBXNativeTarget "EVSlidingTableViewCell-EVSlidingTableViewCell" */ = {
+		BB2BCC1B5D163EBEE5E6A682D4CF3D7C /* Build configuration list for PBXNativeTarget "Pods-EVSlidingTableViewCell_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4D4183F7F1D740377BB6EA18E2BA0608 /* Debug */,
-				FB5481916DD7E0EA2B9837B04D54FBD0 /* Release */,
+				6C94DD3CBC4A46B39C81AD38C692C794 /* Debug */,
+				D78D4F885DFB4C1F11A11CBD7FE3AC51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F06E211045E2E6F880200E0D2BCA3132 /* Build configuration list for PBXNativeTarget "Pods-EVSlidingTableViewCell_Example" */ = {
+		EDC28C36DE5F1B5E5D278D67C3707EE5 /* Build configuration list for PBXNativeTarget "Pods-EVSlidingTableViewCell_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1A679E5D6976FB5D2B8649D25A1A5031 /* Debug */,
-				249AB02CE3B8FC578DE6858C5E0A0442 /* Release */,
+				070B458F3C454867DDC8DD5A42C8C8F0 /* Debug */,
+				BBDD67F42C3CFAF2D51D529309D9D8F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

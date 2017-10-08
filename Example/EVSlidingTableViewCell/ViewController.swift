@@ -48,7 +48,7 @@ extension ViewController: UITableViewDataSource {
         let cell = contactsTableView.dequeueReusableCell(withIdentifier: self.reuseIdentifier) as! SlidingTableViewControllerCell
         let user = data[indexPath.row]
         //set properties for drawer view icons.  In this example they are contact methods
-        let contactMethods = setDrawerViewOptionsForRow(object: user)
+        let contactMethods = setDrawerViewOptionsForRow(user)
         //set attributes for the specific UITableViewCell
         cell.setCellWith(overlayParameters: ["name":user.name], drawerViewOptions: contactMethods, overlayView: OverlayView.loadFromNib(nil))
         cell.selectionStyle = .none;

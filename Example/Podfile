@@ -1,11 +1,9 @@
 use_frameworks!
-
 target 'EVSlidingTableViewCell_Example' do
+  platform :ios, '9.3'
   pod 'EVSlidingTableViewCell', :path => '../'
-
+  
   target 'EVSlidingTableViewCell_Tests' do
     inherit! :search_paths
-
-    
   end
 end

@@ -91,7 +91,7 @@ open class SlidingTableViewControllerCell: UITableViewCell {
     }
     
     //MARK: Gesture Handlers
-    func handlePanFromOverlay(_ recognizer: UIPanGestureRecognizer){
+    @objc func handlePanFromOverlay(_ recognizer: UIPanGestureRecognizer){
         let translation = recognizer.translation(in: overlayView)
         switch recognizer.state {
         case .began:
@@ -138,7 +138,7 @@ open class SlidingTableViewControllerCell: UITableViewCell {
         }
     }
     
-    func handlePanFromDrawer(_ recognizer: UIPanGestureRecognizer) {
+    @objc func handlePanFromDrawer(_ recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self.overlayView)
         switch recognizer.state{
         case .changed:
