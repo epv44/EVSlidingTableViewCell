@@ -13,7 +13,7 @@ extension UITableViewCell {
         static var drawerDisplayed: Bool = false
     }
     
-    var drawerDisplayed : Bool! {
+    var drawerDisplayed: Bool? {
         get {
             return (objc_getAssociatedObject(self, &AssociatedKeys.drawerDisplayed) as? Bool)
         }

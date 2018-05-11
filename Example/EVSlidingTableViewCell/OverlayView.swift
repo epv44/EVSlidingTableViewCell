@@ -22,6 +22,10 @@ class OverlayView: EVOverlayView {
     }
     
     override func setupUI(){
-        titleLabel.text = viewParameters!["name"] as? String
+        titleLabel.text = viewParameters?["name"] as? String
+    }
+    
+    deinit {
+        viewParameters = nil
     }
 }

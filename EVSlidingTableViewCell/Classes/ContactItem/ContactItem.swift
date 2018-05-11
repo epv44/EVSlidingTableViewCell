@@ -14,35 +14,50 @@ class ContactItem: UIView {
     @IBOutlet weak var itemContainer: UIView!
     
     private var closure: DrawerViewClosureType?
-    private var actionText: String?
+    private var actionText = ""
     
-    var labelText: String = "" {
-        didSet {
-            title.text = labelText
+    var labelText: String? {
+        get {
+            return title.text
+        }
+        set {
+            title.text = newValue
         }
     }
     
     var buttonClosure: DrawerViewClosureType? {
-        didSet {
-            closure = buttonClosure
+        get {
+            return closure
+        }
+        set {
+            closure = newValue
         }
     }
     
     var buttonActionText: String? {
-        didSet {
-            actionText = buttonActionText ?? ""
+        get {
+            return actionText
+        }
+        set {
+            actionText = newValue ?? ""
         }
     }
     
     var labelColor: UIColor? {
-        didSet {
-            title.backgroundColor = labelColor
+        get {
+            return title.backgroundColor
+        }
+        set {
+            title.backgroundColor = newValue
         }
     }
     
-    var buttonImage: UIImage = UIImage() {
-        didSet {
-            button.setImage(buttonImage, for: UIControlState())
+    var buttonImage: UIImage {
+        get {
+            return button.image(for: UIControlState()) ?? UIImage()
+        }
+        set {
+            button.setImage(newValue, for: UIControlState())
         }
     }
     
@@ -51,10 +66,6 @@ class ContactItem: UIView {
     }
     
     @IBAction func invokeContactClosure(_ sender: AnyObject) {
-        if closure != nil {
-            guard closure!(actionText!) else {
-                return
-            }
-        }
+        _ = closure?(actionText)
     }
 }
