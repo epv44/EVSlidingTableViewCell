@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		1DE16B7F488E15FB557BCE58E0F55ECC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		2C47E01FF3FF89D9E3FE62E850714CC9 /* EVSlidingTableViewCell-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D25E0CC3E19E8D88243E43C543286DA4 /* EVSlidingTableViewCell-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		422583C7D4F71E3AACD66C36727FFAAD /* EVOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F06807AEA49DF088ACB566F4ED25388 /* EVOverlayView.swift */; };
+		2E9CDA1E20B12CF2001A43F4 /* EVOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9CDA1D20B12CF2001A43F4 /* EVOverlayView.swift */; };
 		6DD8D0100480DBFBC19D1F22EA39AA9F /* Pods-EVSlidingTableViewCell_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0922BC32BF2497A1963008B3A98B8223 /* Pods-EVSlidingTableViewCell_Example-dummy.m */; };
 		6F430D268B7EBFD5BDBF0EA75B906E72 /* SlidingTableViewControllerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ABC2C97A21773E205A3EE3F58498039B /* SlidingTableViewControllerCell.xib */; };
 		7540AB4745F2CCD0C9CCCE233D2BD11B /* ContactItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8614A5089290D6C4691534EF1FA6863 /* ContactItem.xib */; };
@@ -64,6 +64,7 @@
 		27E7E91957281024C7AD0356C35989DA /* DrawerViewOption.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DrawerViewOption.swift; sourceTree = "<group>"; };
 		27ED834B8CFE37500B912A37D05E78FE /* Pods-EVSlidingTableViewCell_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EVSlidingTableViewCell_Example-umbrella.h"; sourceTree = "<group>"; };
 		29F583C467C9AE142037EA4FAA77BFDC /* Pods-EVSlidingTableViewCell_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-EVSlidingTableViewCell_Tests-umbrella.h"; sourceTree = "<group>"; };
+		2E9CDA1D20B12CF2001A43F4 /* EVOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVOverlayView.swift; sourceTree = "<group>"; };
 		3D456DF0A34A5BA14B2059C386929D37 /* Pods-EVSlidingTableViewCell_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-EVSlidingTableViewCell_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		3D9B508B0D415BE37785993F29CA0167 /* Pods-EVSlidingTableViewCell_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-EVSlidingTableViewCell_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		57848BBECCF9AD1E141874522F26F071 /* Pods-EVSlidingTableViewCell_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-EVSlidingTableViewCell_Tests-frameworks.sh"; sourceTree = "<group>"; };
@@ -77,7 +78,6 @@
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		96C418846C022CB82B6820DBBD9055EC /* Pods-EVSlidingTableViewCell_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-EVSlidingTableViewCell_Example.modulemap"; sourceTree = "<group>"; };
 		991C7436332BD4B4E1D7841C9DC0DD83 /* EVSlidingTableViewCell.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EVSlidingTableViewCell.xcconfig; sourceTree = "<group>"; };
-		9F06807AEA49DF088ACB566F4ED25388 /* EVOverlayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EVOverlayView.swift; sourceTree = "<group>"; };
 		ABC2C97A21773E205A3EE3F58498039B /* SlidingTableViewControllerCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = SlidingTableViewControllerCell.xib; sourceTree = "<group>"; };
 		AFB8FC00AF6FA9500A7711D0F8C3761D /* EVSlidingTableViewCell-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EVSlidingTableViewCell-prefix.pch"; sourceTree = "<group>"; };
 		B93E4DBDDFF5EE1864AEA5F3E16A96F2 /* EVSlidingTableViewCell.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = EVSlidingTableViewCell.modulemap; sourceTree = "<group>"; };
@@ -166,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				0C5E0B25C31AD90FEF044C64D65502E6 /* EVOverlay.swift */,
-				9F06807AEA49DF088ACB566F4ED25388 /* EVOverlayView.swift */,
+				2E9CDA1D20B12CF2001A43F4 /* EVOverlayView.swift */,
 			);
 			name = OverlayView;
 			path = EVSlidingTableViewCell/Classes/OverlayView;
@@ -481,8 +481,8 @@
 				AD8B315E59644DEB6128B0E6984E20B7 /* DrawerViewOption.swift in Sources */,
 				EE33FB7258215924AF132838353E77AD /* EVConstants.swift in Sources */,
 				9AF35F30FCA1A4F824DE1C003037E43E /* EVOverlay.swift in Sources */,
-				422583C7D4F71E3AACD66C36727FFAAD /* EVOverlayView.swift in Sources */,
 				B60581E7402CF5BCA75B19351B7C61FB /* EVSlidingTableViewCell-dummy.m in Sources */,
+				2E9CDA1E20B12CF2001A43F4 /* EVOverlayView.swift in Sources */,
 				A6DE0EE1BCC46F89FFB166DDF7956190 /* SlidingTableViewControllerCell.swift in Sources */,
 				AFB784694BB23CE7855C8C5D0C0A65FF /* SlidingTableViewControllerCell.xib in Sources */,
 				81F054FF7EEB1EBDF1A399D2E2DBE18D /* SlidingTableViewControllerCell.xib in Sources */,

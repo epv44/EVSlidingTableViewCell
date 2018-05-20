@@ -22,7 +22,8 @@ struct Constants {
                        User(name: "dwane", email: "wayne@example.com", homePhone: "313-233-3444"),
                        User(name: "bryan", email: "birdman@example.com", workPhone: "216-233-3444"),
                        User(name: "mario", email: "yogotti@example.com"),
-                       User(name: "sam")]
+                       //User(name: "sam")
+    ]
 }
 
 func emailClosure() -> DrawerViewClosureType {

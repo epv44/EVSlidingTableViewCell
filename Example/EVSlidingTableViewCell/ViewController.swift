@@ -13,12 +13,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var contactsTableView: UITableView!
     
     let data = Constants.data
-    let reuseIdentifier = "drawerViewCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bundle = Bundle(for: SlidingTableViewControllerCell.classForCoder())
-        contactsTableView.register(UINib(nibName: "SlidingTableViewControllerCell", bundle: bundle), forCellReuseIdentifier: reuseIdentifier)
+        contactsTableView.register(SlidingTableViewControllerCell<MyStruct>.self, forCellReuseIdentifier: SlidingTableViewControllerCell<Any>.reuseIdentifier)
         contactsTableView.rowHeight = UITableViewAutomaticDimension
         contactsTableView.estimatedRowHeight = 71
     }
@@ -64,12 +62,12 @@ extension ViewController: UITableViewDelegate {
 //MARK: - UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = contactsTableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! SlidingTableViewControllerCell
+        let cell = contactsTableView.dequeueReusableCell(withIdentifier: SlidingTableViewControllerCell<Any>.reuseIdentifier, for: indexPath) as! SlidingTableViewControllerCell<MyStruct>
         let user = data[indexPath.row]
         //set properties for drawer view icons.  In this example they are contact methods
         let contactMethods = setDrawerViewOptionsForRow(user)
         //set attributes for the specific UITableViewCell
-        cell.setCellWith(overlayParameters: ["name":user.name ?? ""], drawerViewOptions: contactMethods, overlayView: OverlayView.loadFromNib(nil))
+        cell.setCellWith(overlayParameters: MyStruct(name: user.name ?? "na"), drawerViewOptions: contactMethods, overlayView: OverlayViewWrapper<MyStruct>())
         cell.selectionStyle = .none;
         return cell
     }

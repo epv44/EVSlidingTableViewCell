@@ -15,15 +15,28 @@ public typealias DrawerViewClosureType = ((String) -> Bool)
 /**
  UITableViewCell that takes a user defined overlay view and allows it to be "swiped" away revealing a serious of IBAction buttons.  As the drawer option buttons are revealed they grow and fade in.
  */
-open class SlidingTableViewControllerCell: UITableViewCell {
-    @IBOutlet fileprivate weak var containerView: UIStackView!
-    
+public extension SlidingTableViewControllerCell {
+    public static var reuseIdentifier: String {
+        return "drawerViewCell"
+    }
+}
+open class SlidingTableViewControllerCell<T>: UITableViewCell {
+    lazy var containerView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        stackView.spacing = 40
+        stackView.contentMode = .scaleToFill
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
     fileprivate var overlayViewGestureRecognizer: UIPanGestureRecognizer?
     fileprivate var drawerViewGestureRecognizer: UIPanGestureRecognizer?
     fileprivate var drawerBoxes = [ContactItem]()
     fileprivate var originalCenter: CGPoint?
     fileprivate var growthRate: CGFloat = 0.01
-    fileprivate weak var overlayView: EVOverlayView? {
+    fileprivate weak var overlayView: EVOverlayView<T>? {
         didSet {
             overlayViewGestureRecognizer = UIPanGestureRecognizer(target: self, action: .handlePanFromOverlay)
             drawerViewGestureRecognizer = UIPanGestureRecognizer(target:self, action: .handlePanFromDrawer)
@@ -34,6 +47,16 @@ open class SlidingTableViewControllerCell: UITableViewCell {
         }
     }
     
+    override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+       
+        
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     /**
      Set UIAttributes for DrawerView, establish gesture recognizers, and add the user defined overlay to the drawer.
      
@@ -41,13 +64,20 @@ open class SlidingTableViewControllerCell: UITableViewCell {
         - Parameter drawerViewOptions: List of DrawerViewOption's which apply to the cell being set up.  These parameters are used to load the layout of the DrawerView options.
         - Parameter overlayView: User defined overlay for the cell, of type EVOverlayView which extends UIView
     */
-    open func setCellWith(overlayParameters: OverlayDictionaryType, drawerViewOptions: DrawerViewOptionsType, overlayView overlay: EVOverlayView){
+    open func setCellWith(overlayParameters: T, drawerViewOptions: DrawerViewOptionsType, overlayView overlay: EVOverlayView<T>){
+        addSubview(containerView)
+        containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        //containerView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        //containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        
         if overlayView != nil {
             overlayView?.removeFromSuperview()
             overlayView  = nil
         }
         overlayView = overlay
         addSubview(overlayView!)
+        //instead of frame should constraints be used to pin this?
         overlayView?.frame = CGRect(x: 0, y: 0, width: contentView.frame.size.width, height: contentView.frame.size.height)
         setupDrawerViewUI(options: drawerViewOptions)
         setGrowthRate()
@@ -173,7 +203,7 @@ open class SlidingTableViewControllerCell: UITableViewCell {
         drawerBoxes = []
         if drawerViewOptions.count < 5 {
             drawerViewOptions.forEach { [weak self] option in
-                let contactView = ContactItem.loadFromNib(Bundle(for: SlidingTableViewControllerCell.classForCoder()))
+                let contactView = ContactItem.loadFromNib(Bundle(for: ContactItem.classForCoder()))
                 contactView.buttonImage = option.icon
                 contactView.labelText = option.labelText
                 contactView.buttonClosure = option.actionClosure
@@ -218,8 +248,8 @@ open class SlidingTableViewControllerCell: UITableViewCell {
 
 // MARK: Selector
 private extension Selector {
-    static let handlePanFromOverlay = #selector(SlidingTableViewControllerCell.handlePanFromOverlay(_:))
-    static let handlePanFromDrawer = #selector(SlidingTableViewControllerCell.handlePanFromDrawer(_:))
+    static let handlePanFromOverlay = #selector(SlidingTableViewControllerCell<Any>.handlePanFromOverlay(_:))
+    static let handlePanFromDrawer = #selector(SlidingTableViewControllerCell<Any>.handlePanFromDrawer(_:))
 }
 
 // MARK: UIView
@@ -327,7 +357,7 @@ extension SlidingTableViewCellDelegate where Self: UIViewController {
      - Parameter indexPath: current NSIndexPath
     */
     public func didSelectRowIn(_ tableView: UITableView, atIndexPath indexPath: IndexPath) {
-        guard let cells = tableView.visibleCells as? [SlidingTableViewControllerCell] else { return }
+        guard let cells = tableView.visibleCells as? [SlidingTableViewControllerCell<Any>] else { return }
         for cell in cells {
             if cell.drawerDisplayed != nil && cell.drawerDisplayed == true {
                 cell.resetOverlay(animated: true)
