@@ -21,7 +21,7 @@ public extension SlidingTableViewControllerCell {
     }
 }
 open class SlidingTableViewControllerCell<T>: UITableViewCell {
-    lazy var containerView: UIStackView = {
+    fileprivate lazy var containerView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center

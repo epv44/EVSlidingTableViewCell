@@ -69,8 +69,6 @@ extension ViewController: UITableViewDataSource {
         //set attributes for the specific UITableViewCell
         cell.setCellWith(overlayParameters: MyStruct(name: user.name ?? "na"), drawerViewOptions: contactMethods, overlayView: OverlayViewWrapper<MyStruct>())
         cell.selectionStyle = .none;
-        cell.setNeedsUpdateConstraints()
-        cell.updateConstraints()
         return cell
     }
 
