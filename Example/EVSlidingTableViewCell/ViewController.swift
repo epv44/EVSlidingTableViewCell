@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         contactsTableView.register(SlidingTableViewControllerCell<MyStruct>.self, forCellReuseIdentifier: SlidingTableViewControllerCell<Any>.reuseIdentifier)
         contactsTableView.rowHeight = UITableViewAutomaticDimension
-        contactsTableView.estimatedRowHeight = 71
+        contactsTableView.estimatedRowHeight = 91
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,6 +69,8 @@ extension ViewController: UITableViewDataSource {
         //set attributes for the specific UITableViewCell
         cell.setCellWith(overlayParameters: MyStruct(name: user.name ?? "na"), drawerViewOptions: contactMethods, overlayView: OverlayViewWrapper<MyStruct>())
         cell.selectionStyle = .none;
+        cell.setNeedsUpdateConstraints()
+        cell.updateConstraints()
         return cell
     }
 
@@ -78,5 +80,7 @@ extension ViewController: UITableViewDataSource {
 }
 
 //MARK: - SlidingTableViewCellDelegate
-extension ViewController: SlidingTableViewCellDelegate { }
+extension ViewController: SlidingTableViewCellDelegate {
+    
+}
 

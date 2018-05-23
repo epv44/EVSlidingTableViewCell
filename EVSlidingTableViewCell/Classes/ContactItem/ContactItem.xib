@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,8 +32,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lwx-2a-gDJ" userLabel="Inner Container">
                     <rect key="frame" x="137.5" y="0.0" width="100" height="667"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJy-qB-0al">
-                            <rect key="frame" x="0.0" y="8" width="100" height="632"/>
+                        <button opaque="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJy-qB-0al">
+                            <rect key="frame" x="0.0" y="20" width="100" height="620"/>
                             <state key="normal">
                                 <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
@@ -51,7 +51,8 @@
                     <constraints>
                         <constraint firstItem="dJy-qB-0al" firstAttribute="leading" secondItem="lwx-2a-gDJ" secondAttribute="leading" id="5d1-bv-Kqg"/>
                         <constraint firstAttribute="trailing" secondItem="dJy-qB-0al" secondAttribute="trailing" id="9lY-8N-uh9"/>
-                        <constraint firstItem="dJy-qB-0al" firstAttribute="top" secondItem="lwx-2a-gDJ" secondAttribute="top" constant="8" id="O8W-3o-D4O"/>
+                        <constraint firstItem="dJy-qB-0al" firstAttribute="top" secondItem="lwx-2a-gDJ" secondAttribute="top" priority="250" constant="20" symbolic="YES" id="9nS-Ij-8GX"/>
+                        <constraint firstItem="dJy-qB-0al" firstAttribute="top" relation="greaterThanOrEqual" secondItem="lwx-2a-gDJ" secondAttribute="top" constant="8" id="O8W-3o-D4O"/>
                         <constraint firstAttribute="trailing" secondItem="baT-rs-eFi" secondAttribute="trailing" id="RWA-D4-dk2"/>
                         <constraint firstItem="baT-rs-eFi" firstAttribute="leading" secondItem="lwx-2a-gDJ" secondAttribute="leading" id="XFF-Lp-ZAK"/>
                         <constraint firstAttribute="bottom" secondItem="baT-rs-eFi" secondAttribute="bottom" constant="5" id="Zyh-Ri-zFN"/>

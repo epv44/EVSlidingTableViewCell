@@ -49,8 +49,6 @@ open class SlidingTableViewControllerCell<T>: UITableViewCell {
     
     override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-       
-        
     }
     
     required public init?(coder aDecoder: NSCoder) {
@@ -65,20 +63,17 @@ open class SlidingTableViewControllerCell<T>: UITableViewCell {
         - Parameter overlayView: User defined overlay for the cell, of type EVOverlayView which extends UIView
     */
     open func setCellWith(overlayParameters: T, drawerViewOptions: DrawerViewOptionsType, overlayView overlay: EVOverlayView<T>){
-        addSubview(containerView)
-        containerView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        containerView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        //containerView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        //containerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        contentView.addSubview(containerView)
+        containerView.pinTo(view: contentView)
         
         if overlayView != nil {
             overlayView?.removeFromSuperview()
             overlayView  = nil
         }
         overlayView = overlay
-        addSubview(overlayView!)
-        //instead of frame should constraints be used to pin this?
-        overlayView?.frame = CGRect(x: 0, y: 0, width: contentView.frame.size.width, height: contentView.frame.size.height)
+        contentView.addSubview(overlayView!)
+        overlayView?.translatesAutoresizingMaskIntoConstraints = false
+        overlayView?.pinTo(view: contentView)
         setupDrawerViewUI(options: drawerViewOptions)
         setGrowthRate()
         overlayView?.viewParameters = overlayParameters
