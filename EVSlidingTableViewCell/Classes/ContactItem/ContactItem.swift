@@ -11,7 +11,7 @@ import UIKit
 class ContactItem: UIView {
     @IBOutlet private weak var button: UIButton!
     @IBOutlet private weak var title: UILabel!
-    @IBOutlet weak var itemContainer: UIView!
+    @IBOutlet private weak var itemContainer: UIView!
     
     private var closure: DrawerViewClosureType?
     private var actionText = ""

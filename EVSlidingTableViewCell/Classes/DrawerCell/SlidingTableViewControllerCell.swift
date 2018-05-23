@@ -8,7 +8,6 @@
 
 import UIKit
 
-public typealias OverlayDictionaryType = [String:Any]
 public typealias DrawerViewOptionsType = [DrawerViewOption]
 public typealias DrawerViewClosureType = ((String) -> Bool)
 
@@ -79,7 +78,7 @@ open class SlidingTableViewControllerCell<T>: UITableViewCell {
         overlayView?.viewParameters = overlayParameters
     }
     
-    ///Removes overlay from the superview, removes reference in ARC, and removes gestures
+    ///Removes overlay from the superview including gestures
     open func clear() {
         removeGestures()
         overlayView?.removeFromSuperview()
