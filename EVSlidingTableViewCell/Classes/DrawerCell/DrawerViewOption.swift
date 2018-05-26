@@ -17,7 +17,14 @@ public struct DrawerViewOption {
     var icon: UIImage
     var actionClosure: DrawerViewClosureType
     
-    ///Initializer
+    /**
+     Set UIAttributes for DrawerView, establish gesture recognizers, and add the user defined overlay to the drawer.
+     
+     - Parameter labelText: String value that is passed into the closure as part of the IBAction
+     - Parameter actionText: String value that is passed into the closure as part of the IBAction
+     - Parameter icon: UIImage used by the UIButton.
+     - Parameter action: ((String) -> Bool) closure executed on IBAction
+     */
     public init(labelText: String, actionText: String, icon: UIImage, action: @escaping DrawerViewClosureType) {
         self.labelText = labelText
         self.associateContactValue = actionText

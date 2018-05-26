@@ -20,7 +20,7 @@ public extension SlidingTableViewControllerCell {
     }
 }
 open class SlidingTableViewControllerCell<T>: UITableViewCell {
-    fileprivate lazy var containerView: UIStackView = {
+    private lazy var containerView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.alignment = .center
@@ -30,12 +30,11 @@ open class SlidingTableViewControllerCell<T>: UITableViewCell {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
-    fileprivate var overlayViewGestureRecognizer: UIPanGestureRecognizer?
-    fileprivate var drawerViewGestureRecognizer: UIPanGestureRecognizer?
-    fileprivate var drawerBoxes = [ContactItem]()
-    fileprivate var originalCenter: CGPoint?
-    fileprivate var growthRate: CGFloat = 0.01
-    fileprivate weak var overlayView: EVOverlayView<T>? {
+    private var overlayViewGestureRecognizer: UIPanGestureRecognizer?
+    private var drawerViewGestureRecognizer: UIPanGestureRecognizer?
+    private var originalCenter: CGPoint?
+    private var growthRate: CGFloat = 0.01
+    private weak var overlayView: EVOverlayView<T>? {
         didSet {
             overlayViewGestureRecognizer = UIPanGestureRecognizer(target: self, action: .handlePanFromOverlay)
             drawerViewGestureRecognizer = UIPanGestureRecognizer(target:self, action: .handlePanFromDrawer)
@@ -46,29 +45,17 @@ open class SlidingTableViewControllerCell<T>: UITableViewCell {
         }
     }
     
-    override public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     /**
      Set UIAttributes for DrawerView, establish gesture recognizers, and add the user defined overlay to the drawer.
      
-        - Parameter overlayParameters: Dictionary [String:Any?] that is passed to the user defined overlay upon setup.  Users should store any parameters they need to set the UI of their overlay and then access this dictionary inside the setupUI() method of their overlay.
+        - Parameter overlayParameters: Generic type that is passed to the user defined overlay upon setup.  Users should store any parameters they need to set the UI of their overlay and then access them inside the setupUI() method of their overlay.
         - Parameter drawerViewOptions: List of DrawerViewOption's which apply to the cell being set up.  These parameters are used to load the layout of the DrawerView options.
         - Parameter overlayView: User defined overlay for the cell, of type EVOverlayView which extends UIView
     */
     open func setCellWith(overlayParameters: T, drawerViewOptions: DrawerViewOptionsType, overlayView overlay: EVOverlayView<T>){
         contentView.addSubview(containerView)
         containerView.pinTo(view: contentView)
-        
-        if overlayView != nil {
-            overlayView?.removeFromSuperview()
-            overlayView  = nil
-        }
+        overlayView?.removeFromSuperview()
         overlayView = overlay
         contentView.addSubview(overlayView!)
         overlayView?.translatesAutoresizingMaskIntoConstraints = false
@@ -121,7 +108,7 @@ open class SlidingTableViewControllerCell<T>: UITableViewCell {
             break
         case .changed:
             overlayView?.center = CGPoint(x: (originalCenter?.x)! + translation.x, y: (originalCenter?.y)!)
-            drawerBoxes.forEach { view in
+            containerView.arrangedSubviews.forEach { view in
                 view.withdrawOverlay(translation: translation.x, width: (overlayView?.bounds.width)!, growthRate: growthRate)
                 let range = frame.size.height - view.frame.size.height
                 if range > 10 {
@@ -146,7 +133,7 @@ open class SlidingTableViewControllerCell<T>: UITableViewCell {
                         }
                     )
                 }
-                drawerBoxes.forEach { view in
+                containerView.arrangedSubviews.forEach { view in
                     view.fadeAndTransform()
                 }
             }else{
@@ -163,7 +150,7 @@ open class SlidingTableViewControllerCell<T>: UITableViewCell {
         let translation = recognizer.translation(in: self.overlayView)
         switch recognizer.state {
         case .changed:
-            drawerBoxes.forEach { view in
+            containerView.arrangedSubviews.forEach { view in
                 view.replaceOverlay(translation: translation.x, width: (overlayView?.bounds.width)!, growthRate: growthRate)
             }
             let xPosition = isGoingLeft(translation.x) ? (overlayView?.bounds.origin.x)! + (overlayView?.frame.width)! : (overlayView?.bounds.origin.x)! - (overlayView?.frame.width)!
@@ -192,9 +179,8 @@ open class SlidingTableViewControllerCell<T>: UITableViewCell {
     }
     
     //MARK: Private Methods
-    fileprivate func setupDrawerViewUI(options drawerViewOptions: DrawerViewOptionsType){
+    private func setupDrawerViewUI(options drawerViewOptions: DrawerViewOptionsType){
         containerView.subviews.forEach({ $0.removeFromSuperview() })
-        drawerBoxes = []
         if drawerViewOptions.count < 5 {
             drawerViewOptions.forEach { [weak self] option in
                 let contactView = ContactItem.loadFromNib(Bundle(for: ContactItem.classForCoder()))
@@ -202,19 +188,18 @@ open class SlidingTableViewControllerCell<T>: UITableViewCell {
                 contactView.labelText = option.labelText
                 contactView.buttonClosure = option.actionClosure
                 contactView.buttonActionText = option.associateContactValue
-                containerView.addArrangedSubview(contactView)
-                self?.drawerBoxes.append(contactView)
+                self?.containerView.addArrangedSubview(contactView)
             }
         }
     }
     
-    fileprivate func roundTo(places: Int, with value: Double) -> Double {
+    private func roundTo(places: Int, with value: Double) -> Double {
         let divisor = pow(10.0, Double(places))
         return ceil(value * divisor) / divisor
     }
     
-    fileprivate func setGrowthRate() {
-        let numberOfDrawerBoxes = drawerBoxes.count
+    private func setGrowthRate() {
+        let numberOfDrawerBoxes = containerView.arrangedSubviews.count
         if numberOfDrawerBoxes != 0 {
             let rawRate = Double((1.0 / (UIScreen.main.bounds.width / CGFloat(numberOfDrawerBoxes))))
             growthRate = CGFloat(roundTo(places: 3, with: rawRate))
@@ -304,7 +289,7 @@ private extension UIView {
                     fadeAndTransform()
                 }
             }
-        }else{
+        } else {
             if case leftPosition ... (rightPosition + EVConstants.ScalingConstants.buffer) = translation{
                 let growthFactor = 1 - calculateGrowthFactorFor(translation: translation, boundsPosition: (leftPosition - EVConstants.ScalingConstants.offset), growthRate: growthRate)
                 fadeAndTransform(growthFactor)
