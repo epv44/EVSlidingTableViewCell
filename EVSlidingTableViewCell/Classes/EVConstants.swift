@@ -11,7 +11,7 @@ import UIKit
 ///  Constants used by the application
 public struct EVConstants {
     ///Bundle for the Cocoapod library
-    public static let bundle = Bundle(for: SlidingTableViewControllerCell.classForCoder())
+    public static let bundle = Bundle(for: SlidingTableViewControllerCell<Any>.classForCoder())
     ///UINib of the TableViewCell used by the Cocoapod library
     public static let evTableViewCell = UINib(nibName: "SlidingTableViewControllerCell", bundle: bundle)
     

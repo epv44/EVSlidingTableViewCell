@@ -9,7 +9,8 @@
 import Foundation
 
 protocol EVOverlay {
-    var parameters: OverlayDictionaryType? { get set }
+    associatedtype OverlayType
+    var viewParameters: OverlayType? { get set }
     
     func setupUI()
 }

@@ -15,14 +15,13 @@ struct Constants {
                        User(name: "marshall", email: "eminem@example.com", homePhone: "313-233-3444"),
                        User(name: "scott", email: "kidcuddie@example.com", workPhone: "216-233-3444"),
                        User(name: "frank", email: "biggie@example.com"),
-                       User(name: "eric"),
                        User(name: "darryl", email: "posk@example.com", homePhone: "347-330-3433", workPhone: "347-330-2323"),
                        User(name: "chris", email: "ludacris@example.com", homePhone: "216-000-0000", workPhone: "216-000-0000"),
                        User(name: "curtis", email: "50cent@example.com", homePhone: "347-111-1234", workPhone: "347-550-4345"),
                        User(name: "dwane", email: "wayne@example.com", homePhone: "313-233-3444"),
                        User(name: "bryan", email: "birdman@example.com", workPhone: "216-233-3444"),
-                       User(name: "mario", email: "yogotti@example.com"),
-                       User(name: "sam")]
+                       User(name: "mario", email: "yogotti@example.com")
+    ]
 }
 
 func emailClosure() -> DrawerViewClosureType {

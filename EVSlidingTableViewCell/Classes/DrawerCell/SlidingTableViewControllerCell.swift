@@ -8,24 +8,33 @@
 
 import UIKit
 
-public typealias OverlayDictionaryType = [String:Any?]
 public typealias DrawerViewOptionsType = [DrawerViewOption]
 public typealias DrawerViewClosureType = ((String) -> Bool)
-
 
 /**
  UITableViewCell that takes a user defined overlay view and allows it to be "swiped" away revealing a serious of IBAction buttons.  As the drawer option buttons are revealed they grow and fade in.
  */
-open class SlidingTableViewControllerCell: UITableViewCell {
-    @IBOutlet fileprivate weak var containerView: UIStackView!
-    
-    fileprivate var overlayViewGestureRecognizer: UIPanGestureRecognizer?
-    fileprivate var drawerViewGestureRecognizer: UIPanGestureRecognizer?
-    fileprivate var drawerBoxes: [ContactItem]?
-    fileprivate var originalCenter: CGPoint?
-    fileprivate var drawerViewOptions: DrawerViewOptionsType?
-    fileprivate var growthRate: CGFloat = 0.01
-    fileprivate weak var overlayView: EVOverlayView? {
+public extension SlidingTableViewControllerCell {
+    public static var reuseIdentifier: String {
+        return "drawerViewCell"
+    }
+}
+open class SlidingTableViewControllerCell<T>: UITableViewCell {
+    private lazy var containerView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        stackView.spacing = 40
+        stackView.contentMode = .scaleToFill
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    private var overlayViewGestureRecognizer: UIPanGestureRecognizer?
+    private var drawerViewGestureRecognizer: UIPanGestureRecognizer?
+    private var originalCenter: CGPoint?
+    private var growthRate: CGFloat = 0.01
+    private weak var overlayView: EVOverlayView<T>? {
         didSet {
             overlayViewGestureRecognizer = UIPanGestureRecognizer(target: self, action: .handlePanFromOverlay)
             drawerViewGestureRecognizer = UIPanGestureRecognizer(target:self, action: .handlePanFromDrawer)
@@ -39,25 +48,24 @@ open class SlidingTableViewControllerCell: UITableViewCell {
     /**
      Set UIAttributes for DrawerView, establish gesture recognizers, and add the user defined overlay to the drawer.
      
-        - Parameter overlayParameters: Dictionary [String:Any?] that is passed to the user defined overlay upon setup.  Users should store any parameters they need to set the UI of their overlay and then access this dictionary inside the setupUI() method of their overlay.
+        - Parameter overlayParameters: Generic type that is passed to the user defined overlay upon setup.  Users should store any parameters they need to set the UI of their overlay and then access them inside the setupUI() method of their overlay.
         - Parameter drawerViewOptions: List of DrawerViewOption's which apply to the cell being set up.  These parameters are used to load the layout of the DrawerView options.
         - Parameter overlayView: User defined overlay for the cell, of type EVOverlayView which extends UIView
     */
-    open func setCellWith(overlayParameters: OverlayDictionaryType, drawerViewOptions: DrawerViewOptionsType, overlayView overlay: EVOverlayView){
-        self.drawerViewOptions = drawerViewOptions
-        if overlayView != nil {
-            overlayView?.removeFromSuperview()
-            overlayView  = nil
-        }
+    open func setCellWith(overlayParameters: T, drawerViewOptions: DrawerViewOptionsType, overlayView overlay: EVOverlayView<T>){
+        contentView.addSubview(containerView)
+        containerView.pinTo(view: contentView)
+        overlayView?.removeFromSuperview()
         overlayView = overlay
-        addSubview(overlayView!)
-        overlayView?.frame = CGRect(x: 0, y: 0, width: contentView.frame.size.width, height: contentView.frame.size.height)
-        setupDrawerViewUI()
+        contentView.addSubview(overlayView!)
+        overlayView?.translatesAutoresizingMaskIntoConstraints = false
+        overlayView?.pinTo(view: contentView)
+        setupDrawerViewUI(options: drawerViewOptions)
         setGrowthRate()
-        overlayView?.parameters = overlayParameters
+        overlayView?.viewParameters = overlayParameters
     }
     
-    ///Removes overlay from the superview, removes reference in ARC, and removes gestures
+    ///Removes overlay from the superview including gestures
     open func clear() {
         removeGestures()
         overlayView?.removeFromSuperview()
@@ -66,18 +74,18 @@ open class SlidingTableViewControllerCell: UITableViewCell {
     
     ///Sets overlay to original center position, fully covering the drawer view.
     /// - Parameter animated: decide if you want the overlay to animate back into position or just appear back on top
-    open func resetOverlay(animated: Bool = false){
-        if originalCenter != nil {
-            if animated {
-                UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .curveEaseIn,
-                    animations: {
-                        self.overlayView?.center = self.originalCenter!
-                    }, completion: nil)
-            } else {
-                overlayView?.center = originalCenter!
-            }
-        } else {
+    open func resetOverlay(animated: Bool = false) {
+        guard let originalCenter = originalCenter else {
             NSLog("Cannot reset to center, original center was never set")
+            return
+        }
+        if animated {
+            UIView.animate(withDuration: 0.25, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5, options: .curveEaseIn,
+                animations: {
+                    self.overlayView?.center = originalCenter
+                }, completion: nil)
+        } else {
+            overlayView?.center = originalCenter
         }
     }
     
@@ -91,7 +99,7 @@ open class SlidingTableViewControllerCell: UITableViewCell {
     }
     
     //MARK: Gesture Handlers
-    @objc func handlePanFromOverlay(_ recognizer: UIPanGestureRecognizer){
+    @objc fileprivate func handlePanFromOverlay(_ recognizer: UIPanGestureRecognizer){
         let translation = recognizer.translation(in: overlayView)
         switch recognizer.state {
         case .began:
@@ -100,7 +108,7 @@ open class SlidingTableViewControllerCell: UITableViewCell {
             break
         case .changed:
             overlayView?.center = CGPoint(x: (originalCenter?.x)! + translation.x, y: (originalCenter?.y)!)
-            drawerBoxes?.forEach { view in
+            containerView.arrangedSubviews.forEach { view in
                 view.withdrawOverlay(translation: translation.x, width: (overlayView?.bounds.width)!, growthRate: growthRate)
                 let range = frame.size.height - view.frame.size.height
                 if range > 10 {
@@ -125,7 +133,7 @@ open class SlidingTableViewControllerCell: UITableViewCell {
                         }
                     )
                 }
-                drawerBoxes?.forEach { view in
+                containerView.arrangedSubviews.forEach { view in
                     view.fadeAndTransform()
                 }
             }else{
@@ -138,11 +146,11 @@ open class SlidingTableViewControllerCell: UITableViewCell {
         }
     }
     
-    @objc func handlePanFromDrawer(_ recognizer: UIPanGestureRecognizer) {
+    @objc fileprivate func handlePanFromDrawer(_ recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self.overlayView)
-        switch recognizer.state{
+        switch recognizer.state {
         case .changed:
-            drawerBoxes?.forEach { view in
+            containerView.arrangedSubviews.forEach { view in
                 view.replaceOverlay(translation: translation.x, width: (overlayView?.bounds.width)!, growthRate: growthRate)
             }
             let xPosition = isGoingLeft(translation.x) ? (overlayView?.bounds.origin.x)! + (overlayView?.frame.width)! : (overlayView?.bounds.origin.x)! - (overlayView?.frame.width)!
@@ -163,72 +171,55 @@ open class SlidingTableViewControllerCell: UITableViewCell {
     
     ///Set gesture recognizer to only pick up on horizontal swipes and allow for normal vertical scrolling of the UITableView
     override open func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
-        if let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer {
-            let translation = panGestureRecognizer.translation(in: superview!)
-            if fabs(translation.x) > fabs(translation.y) {
-                return true
-            }
+        guard let panGestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer else {
             return false
         }
-        return false
+        let translation = panGestureRecognizer.translation(in: superview!)
+        return fabs(translation.x) > fabs(translation.y)
     }
     
     //MARK: Private Methods
-    fileprivate func setupDrawerViewUI(){
+    private func setupDrawerViewUI(options drawerViewOptions: DrawerViewOptionsType){
         containerView.subviews.forEach({ $0.removeFromSuperview() })
-        drawerBoxes = []
-        if drawerViewOptions != nil && drawerViewOptions!.count < 5 {
-            drawerViewOptions?.forEach { option in
-                let contactView = ContactItem.loadFromNib(Bundle(for: SlidingTableViewControllerCell.classForCoder()))
-                if let image = option.buttonImage {
-                    contactView.buttonImage = image
-                } else {
-                    contactView.buttonImage = UIImage()
-                }
-                if let text = option.textForLabel {
-                    contactView.labelText = text
-                } else {
-                    contactView.labelText = ""
-                }
-                contactView.buttonClosure = option.closure
-                contactView.buttonActionText = option.valueForButtonAction
-                containerView.addArrangedSubview(contactView)
-                drawerBoxes?.append(contactView)
+        if drawerViewOptions.count < 5 {
+            drawerViewOptions.forEach { [weak self] option in
+                let contactView = ContactItem.loadFromNib(Bundle(for: ContactItem.classForCoder()))
+                contactView.buttonImage = option.icon
+                contactView.labelText = option.labelText
+                contactView.buttonClosure = option.actionClosure
+                contactView.buttonActionText = option.associateContactValue
+                self?.containerView.addArrangedSubview(contactView)
             }
         }
     }
     
-    fileprivate func roundTo(places: Int, with value: Double) -> Double {
+    private func roundTo(places: Int, with value: Double) -> Double {
         let divisor = pow(10.0, Double(places))
         return ceil(value * divisor) / divisor
     }
     
-    fileprivate func setGrowthRate() {
-        let numberOfDrawerBoxes = drawerBoxes?.count
-        if numberOfDrawerBoxes != nil && numberOfDrawerBoxes != 0 {
-            let rawRate = Double((1.0 / (UIScreen.main.bounds.width / CGFloat(numberOfDrawerBoxes!))))
+    private func setGrowthRate() {
+        let numberOfDrawerBoxes = containerView.arrangedSubviews.count
+        if numberOfDrawerBoxes != 0 {
+            let rawRate = Double((1.0 / (UIScreen.main.bounds.width / CGFloat(numberOfDrawerBoxes))))
             growthRate = CGFloat(roundTo(places: 3, with: rawRate))
         }
     }
     
     private func resetCells(except currentCell: SlidingTableViewControllerCell) {
-        guard let tableView = superview?.superview as? UITableView else {
+        guard let tableView = superview as? UITableView else {
             NSLog("Error: superview is not a Table view")
             return
         }
         
-        DispatchQueue(label: "SlidingTableViewCell").async(qos: .background) {
-            for cell in tableView.visibleCells {
-                guard let slidingCell = cell as? SlidingTableViewControllerCell else {
-                    break
-                }
-                
-                if slidingCell.drawerDisplayed != nil && cell.drawerDisplayed == true && slidingCell !== currentCell {
-                    DispatchQueue.main.async( execute: {
-                        slidingCell.resetOverlay(animated: true)
-                        slidingCell.drawerDisplayed = false
-                    })
-                }
+        for cell in tableView.visibleCells {
+            guard let slidingCell = cell as? SlidingTableViewControllerCell else {
+                break
+            }
+            
+            if slidingCell.drawerDisplayed != nil && cell.drawerDisplayed == true && slidingCell !== currentCell {
+                slidingCell.resetOverlay(animated: true)
+                slidingCell.drawerDisplayed = false
             }
         }
     }
@@ -236,8 +227,8 @@ open class SlidingTableViewControllerCell: UITableViewCell {
 
 // MARK: Selector
 private extension Selector {
-    static let handlePanFromOverlay = #selector(SlidingTableViewControllerCell.handlePanFromOverlay(_:))
-    static let handlePanFromDrawer = #selector(SlidingTableViewControllerCell.handlePanFromDrawer(_:))
+    static let handlePanFromOverlay = #selector(SlidingTableViewControllerCell<Any>.handlePanFromOverlay(_:))
+    static let handlePanFromDrawer = #selector(SlidingTableViewControllerCell<Any>.handlePanFromDrawer(_:))
 }
 
 // MARK: UIView
@@ -280,14 +271,10 @@ private extension UIView {
     }
     
     func isPassed(translation: CGFloat){
-        if isGoingLeft(translation){
-            if (leftPosition - EVConstants.ScalingConstants.offset) > (translation + UIScreen.main.bounds.width) {
-                fadeAndTransform()
-            }
-        } else {
-            if (rightPosition + EVConstants.ScalingConstants.offset) < translation {
-                fadeAndTransform()
-            }
+        if isGoingLeft(translation) && (leftPosition - EVConstants.ScalingConstants.offset) > (translation + UIScreen.main.bounds.width) {
+            fadeAndTransform()
+        } else if (rightPosition + EVConstants.ScalingConstants.offset) < translation {
+            fadeAndTransform()
         }
     }
     
@@ -302,7 +289,7 @@ private extension UIView {
                     fadeAndTransform()
                 }
             }
-        }else{
+        } else {
             if case leftPosition ... (rightPosition + EVConstants.ScalingConstants.buffer) = translation{
                 let growthFactor = 1 - calculateGrowthFactorFor(translation: translation, boundsPosition: (leftPosition - EVConstants.ScalingConstants.offset), growthRate: growthRate)
                 fadeAndTransform(growthFactor)
@@ -311,7 +298,7 @@ private extension UIView {
     }
     
     func isGoingLeft(_ value: CGFloat) -> Bool{
-        return value < 0 ? true : false
+        return value < 0
     }
     
     func calculateGrowthFactorFor(translation: CGFloat, boundsPosition: CGFloat, growthRate: CGFloat) -> CGFloat {
@@ -332,13 +319,12 @@ private extension UIView {
  */
 public protocol SlidingTableViewCellDelegate: class {
     /**
-     Set options for DrawerView ContactItem
+     Resets Overlay view to center position when the TableViewCell is selected.  You can call this method from didSelectRowAtIndexPath, or you can override.
      
-     - Parameter object: The object used to populate the DrawerViewOptions
-     
-     - Returns: List of DrawerViewOptions
-    */
-    func setDrawerViewOptionsForRow(_ object: Any) -> DrawerViewOptionsType
+     - Parameter tableView: UITableView used
+     - Parameter indexPath: current NSIndexPath
+     */
+    func didSelectRowIn(_ tableView: UITableView, atIndexPath indexPath: IndexPath)
 }
 
 
@@ -350,7 +336,8 @@ extension SlidingTableViewCellDelegate where Self: UIViewController {
      - Parameter indexPath: current NSIndexPath
     */
     public func didSelectRowIn(_ tableView: UITableView, atIndexPath indexPath: IndexPath) {
-        for cell in tableView.visibleCells as! [SlidingTableViewControllerCell] {
+        guard let cells = tableView.visibleCells as? [SlidingTableViewControllerCell<Any>] else { return }
+        for cell in cells {
             if cell.drawerDisplayed != nil && cell.drawerDisplayed == true {
                 cell.resetOverlay(animated: true)
                 cell.drawerDisplayed = false
