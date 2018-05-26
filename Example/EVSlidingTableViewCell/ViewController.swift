@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    fileprivate func setDrawerViewOptionsForRow(_ user: User) -> DrawerViewOptionsType {
+    private func setDrawerViewOptionsForRow(_ user: User) -> DrawerViewOptionsType {
         var contactMethods = DrawerViewOptionsType()
         
         if let mobileNumber = user.homePhone {
