@@ -17,7 +17,7 @@ To run the sample project, clone the repo, and run `pod install` from the Exampl
 
 ## Requirements
 
-* Swift 3.0+
+* Swift 4.0+
 * iOS 9.0+
 
 ## Installation
@@ -41,7 +41,7 @@ Read the [docs][docsLink]. Generated with [jazzy](https://github.com/realm/jazzy
 ## Getting Started
 
 ### 1. Create The Overlay View
-Create your custom Overlay View.  This is the view you want to swipe away to reveal the drawer options.  Make sure to override the ```setupUI``` method, because it is called by the DrawerView and allows for the easy setup of the UIAttributes in your cell.  The ```viewParameters``` dictionary is available from this method, place the parameters you want in this dictionary and access them to setup your view within the Overlay.
+Create your custom Overlay View.  This is the view you want to swipe away to reveal the drawer options.  Make sure to override the ```setupUI``` method, because it is called by the DrawerView and allows for the easy setup of the UIAttributes in your cell.  The ```viewParameters``` type is available from this method, this should be the generic object you used to setup your overlay view.
 
 ````swift
 import EVSlidingTableViewCell
@@ -49,7 +49,7 @@ import EVSlidingTableViewCell
         @IBOutlet private weak var titleLabel: UILabel!
         //override this method
         override func setupUI(){
-        titleLabel.text = viewParameters["titleLabelText"]
+        }
     }
 }
 ````
@@ -59,46 +59,13 @@ import EVSlidingTableViewCell
 Register the custom cell to the UITableView, same as any other custom cell.
 
 ````swift
-tableView.registerNib(EVConstants.evTableViewCell, forCellReuseIdentifier: reuseIdentifier)
+contactsTableView.register(SlidingTableViewControllerCell<MyStruct>.self, forCellReuseIdentifier: SlidingTableViewControllerCell<Any>.reuseIdentifier)
 ````
 
-Extend the SlidingTableViewCellDelegate and implement the ```setDrawerViewOptionsForRow``` method 
+Extend the SlidingTableViewCellDelegate 
 
 ````swift
-extension ViewController: SlidingTableViewCellDelegate {
-    //a complete example can be found in the sample project
-    func setDrawerViewOptionsForRow(_ object: Any) -> DrawerViewOptionsType {
-        var contactMethods = DrawerViewOptionsType()
-        //set contactMethods values for the label, image, and closure...
-        //e.i. contactMethods.closure = emailClosure()
-        return contactMethods 
-    }
-}
-````
-
-Make sure to correctly link to this cell inside of your UITableViewDelegate/DataSource
-
-````swift
-//MARK: - UITableViewDelegate
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    //calls delegate method to replace overlay you can overwrite this method inside of the SlidingTableViewCellDelegate
-    didSelectRowIn(tableView, atIndexPath: indexPath)
-    }
-}
-
-//MARK: - UITableViewDataSource
-extension ViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = contactsTableView.dequeueReusableCellWithIdentifier(self.reuseIdentifier) as! SlidingTableViewControllerCell
-        let user = data[indexPath.row]
-        //calls delegateMethod
-        let contactMethods = setDrawerViewOptionsForRow(user)
-        cell.setCellWithAttributes(overlayParameters: [:], drawerViewOptions: contactMethods, overlayView: OverlayView.loadFromNib(nil))
-        cell.selectionStyle = .None;
-        return cell
-    }
-}
+extension ViewController: SlidingTableViewCellDelegate { }
 ````
 
 Lastly, define your closures of type ```DrawerViewClosureType``` which are executed on drawer view button click.  Feel free to make whatever closures you want.  Sticking with the GChat theme, examples are included below:
@@ -165,8 +132,6 @@ UITableViewCell that allows for the overlay to slide and reveal the drawer.
 ### SlidingTableViewDelegate
 Public protocol serving as the delegate for the SlidingTableViewCell, a complete example implementation is included in the sample project.
 * **Methods**
-    * **setDrawerViewOptionsForRow(_ object: Any) -> DrawerViewOptionsType**
-        * Use this method to construct an array of ```DrawerViewOptions``` this array is then used to populate the ContactItem UIView
     * **didSelectRowIn(_ tableView: UITableView, atIndexPath indexPath: NSIndexPath)**
         * Calls ```resetOverlay``` on open cells when a cell is selected
         * Has a default implementation that can be overridden
@@ -174,7 +139,7 @@ Public protocol serving as the delegate for the SlidingTableViewCell, a complete
 ### EVOverlayView
 UIView that conforms to the EVOverlayProtocol.  When you create your overlay extend EVOverlay, ```class YourOverlay: EVOverlayView`{}``.
 * **Parameters**
-    * **viewParameters** -> ```OverlayDictionaryType``` contains all the user defined properties from the overlayParameters in the ```cell.setCellWithAttributes(...)``` method call 
+    * **viewParameters** -> ```T``` contains all the user defined properties from the overlayParameters in the ```cell.setCellWithAttributes(...)``` method call 
 * **Methods**
     * **setupUI()** -> Override this method to set up a custom layout for your overlay, see ```OverlayView``` in sample project for an example implementation
 
@@ -183,7 +148,6 @@ UIView that conforms to the EVOverlayProtocol.  When you create your overlay ext
 *  **UIView** -> Adds method ```.loadFromNib(bundle)``` which is used in the example project and loads a file from a nib see [stackoverflow answer][stackoverflow]
 
 ### Typealiases
-* **OverlayDictionaryType** -> ```[String:Any?]```
 * **DrawerViewOptionType** -> ```[DrawerViewOption]```
 * **DrawerViewClosureType** -> ```((String) -> Bool)```
 
