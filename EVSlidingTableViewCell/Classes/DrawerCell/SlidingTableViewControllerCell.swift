@@ -15,7 +15,7 @@ public typealias DrawerViewClosureType = ((String) -> Bool)
  UITableViewCell that takes a user defined overlay view and allows it to be "swiped" away revealing a serious of IBAction buttons.  As the drawer option buttons are revealed they grow and fade in.
  */
 public extension SlidingTableViewControllerCell {
-    public static var reuseIdentifier: String {
+    static var reuseIdentifier: String {
         return "drawerViewCell"
     }
 }
@@ -175,7 +175,7 @@ open class SlidingTableViewControllerCell<T>: UITableViewCell {
             return false
         }
         let translation = panGestureRecognizer.translation(in: superview!)
-        return fabs(translation.x) > fabs(translation.y)
+        return abs(translation.x) > abs(translation.y)
     }
     
     //MARK: Private Methods

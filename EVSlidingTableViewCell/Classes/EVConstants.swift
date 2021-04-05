@@ -26,7 +26,7 @@ public struct EVConstants {
                 return growthRateValue
             }
             set {
-                self.growthRateValue = growthRate
+                self.growthRateValue = newValue
             }
         }
     }

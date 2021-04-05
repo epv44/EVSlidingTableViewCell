@@ -26,7 +26,7 @@ struct Constants {
 
 func emailClosure() -> DrawerViewClosureType {
     func openEmail(text: String) -> (Bool) {
-        UIApplication.shared.openURL(NSURL(string: "mailto:\(text)")! as URL)
+        UIApplication.shared.open(NSURL(string: "mailto:\(text)")! as URL)
         return true
     }
     
@@ -37,7 +37,7 @@ func emailClosure() -> DrawerViewClosureType {
 func phoneClosure() -> DrawerViewClosureType {
     func openPhone(text: String) -> (Bool) {
         let phoneNumber: String = text.components(separatedBy: NSCharacterSet.decimalDigits.inverted).joined(separator: "")
-        UIApplication.shared.openURL(NSURL(string: "tel://\(phoneNumber)")! as URL)
+        UIApplication.shared.open(NSURL(string: "tel://\(phoneNumber)")! as URL)
         return true
     }
     
@@ -47,7 +47,7 @@ func phoneClosure() -> DrawerViewClosureType {
 func textClosure() -> DrawerViewClosureType {
     func openMessenger(text: String) -> (Bool) {
         let phoneNumber = text.components(separatedBy: NSCharacterSet.decimalDigits.inverted).joined(separator: "")
-        UIApplication.shared.openURL(NSURL(string: "sms:+\(phoneNumber)")! as URL)
+        UIApplication.shared.open(NSURL(string: "sms:+\(phoneNumber)")! as URL)
         return true
     }
     

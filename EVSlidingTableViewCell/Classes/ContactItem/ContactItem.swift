@@ -54,10 +54,10 @@ class ContactItem: UIView {
     
     var buttonImage: UIImage {
         get {
-            return button.image(for: UIControlState()) ?? UIImage()
+            return button.image(for: UIControl.State()) ?? UIImage()
         }
         set {
-            button.setImage(newValue, for: UIControlState())
+            button.setImage(newValue, for: UIControl.State())
         }
     }
     

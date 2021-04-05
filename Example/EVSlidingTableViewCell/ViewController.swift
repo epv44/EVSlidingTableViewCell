@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         contactsTableView.register(SlidingTableViewControllerCell<MyStruct>.self, forCellReuseIdentifier: SlidingTableViewControllerCell<Any>.reuseIdentifier)
-        contactsTableView.rowHeight = UITableViewAutomaticDimension
+        contactsTableView.rowHeight = UITableView.automaticDimension
         contactsTableView.estimatedRowHeight = 91
     }
     
